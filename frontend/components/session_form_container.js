@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     loggedIn,
     errors,
-    formType
+    formType,
+    signUpInfo: ownProps.signUpInfo
   };
 };
 

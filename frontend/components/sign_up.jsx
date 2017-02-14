@@ -70,7 +70,7 @@ class Signup extends React.Component {
       case 2:
         return this.part2();
       case 3:
-        return (<SessionFormContainer formType='signup' userInfo={this.state}/>);
+        return (<SessionFormContainer formType='signup' signUpInfo={this.state}/>);
       default:
         return null;
     }
