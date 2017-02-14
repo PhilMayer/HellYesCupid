@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router';
+import merge from 'lodash/merge';
 
 class SessionForm extends React.Component {
 
@@ -7,8 +8,11 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
         username: "",
-        password: ""
+        password: "",
+        min_age: 18,
+        max_age: 99
     };
+    this.state = merge(this.state, props.signUpInfo);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
