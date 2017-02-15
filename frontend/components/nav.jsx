@@ -1,7 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 
 const Nav = (props) => {
+  
   if(props.currentUser) {
     return (
       <div>
@@ -11,9 +12,11 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <div>
-        <Link to='/signup'>Signup</Link>
-        <Link to='/login'>Login</Link>
+      <div className="nav">
+        <div>
+          <Link to='/login'>Sign in</Link>
+        </div>
+        <span>Have an account?</span>
       </div>
     );
   }

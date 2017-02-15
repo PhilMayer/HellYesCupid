@@ -14,80 +14,9 @@
  *= require_self
  */
 
-html, body, section, article, h1, h2, p {
-  margin: 0;
-  padding: 0;
-  border: 0;
-
-  font: inherit;
-  text-align: inherit;
-  text-decoration: inherit;
-  color: inherit;
-
-  background: transparent;
-}
+@import "base/reset.css";
+@import "components/*";
 
 body {
   font-family: 'Open Sans',sans-serif;
-}
-
-.signup {
-  padding-top: 200px;
-  background: #104da1;
-  height: 880px;
-  text-align: center;
-  color: #fff;
-
-}
-
-.signup h2 {
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 50px;
-  margin-bottom: 43px;
-}
-
-.signup span {
-  padding-right: 14px;
-  font-size: 22px;
-}
-
-.signup select {
-  background: #3260c7;
-  border-radius: 3px;
-  border: 0;
-  font-size: 18px;
-  margin-right: 20px;
-  height: 58px;
-  cursor: pointer;
-  color: white;
-}
-
-.signup button {
-  box-shadow: 0 2px 1px #07408d;
-  background-color: #29d58f;
-  border-radius: 3px;
-  width: 165px;
-  height: 58px;
-  border: 0;
-  font-size: 18px;
-  font-weight: 400;
-  cursor: pointer;
-  color: white;
-}
-
-.signup input {
-  display: block;
-  margin: auto;
-  margin-bottom: 20px;
-  border: 1px solid #ccd0d9;
-  color: #5e6573;
-  width: 100%
-  border-radius: 2px;
-  font-size: 15px;
-  line-height: 22px;
-}
-
-.signup input:last-child {
-  margin-bottom: 10px;
 }

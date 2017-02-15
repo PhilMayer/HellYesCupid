@@ -1,0 +1,26 @@
+.nav {
+  background: #104da1;
+}
+.nav div {
+  float: right;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid #4879c1;
+  color: #fff;
+  border-radius: 2px;
+  margin: 40px 40px 0px 23px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.nav div:hover {
+  background-color: #103da1;
+}
+
+.nav span {
+  float:right;
+  margin-top: 53px;
+  color: white;
+}

@@ -49,19 +49,19 @@ class SessionForm extends React.Component {
       errors = this.props.errors.join(", ");
     }
 
+    // <Link to={link}>{link.substring(1)}</Link>
     return (
-      <div>
-        <Link to={link}>{link.substring(1)}</Link>
-
+      <div className="signup">
+        <h1>HellYesCupid</h1>
         <h2>{text}</h2>
         <form onSubmit={this.handleSubmit}>
 
           <input onChange={this.update('username')} type="text" value={this.state.username} placeholder="username"/>
-          <input onChange={this.update('password')} type="text" value={this.state.password} placeholder="password"/>
+          <input onChange={this.update('password')} type="password" value={this.state.password} placeholder="password"/>
 
           <p>{errors}</p>
 
-          <input type="submit" value={submitButton}/>
+          <button type="submit">{submitButton}</button>
           </form>
       </div>
     );
