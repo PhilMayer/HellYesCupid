@@ -25,9 +25,9 @@ class Signup extends React.Component {
 
   part1 () {
     return(
-      <div>
-        <h1>Join the second best free dating site on Earth</h1>
-            I am a
+      <div className="signup">
+        <h2>Join the second best free dating site on Earth</h2>
+            <span>I am a</span>
             <select onChange={this.update('sexuality')} name="sexuality">
               <option value="straight">Straight</option>
               <option value="gay">Gay</option>
@@ -46,16 +46,16 @@ class Signup extends React.Component {
 
   part2() {
     return(
-      <div>
-        <h1>Almost there! Just a little more to go.</h1>
+      <div className="signup">
+        <h2>Almost there! Just a little more to go.</h2>
         <label htmlFor="age">Age</label>
-        <input id="age" type="text" value={this.state.age} />
+        <input onChange={this.update('age')} id="age" type="text" value={this.state.age} />
 
         <label htmlFor="zipcode">Zipcode</label>
-        <input id="zipcode" type="text" value={this.state.zipcode} placeholder="e.g. 10001"/>
+        <input onChange={this.update('zipcode')} id="zipcode" type="text" value={this.state.zipcode} placeholder="e.g. 10001"/>
 
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={this.state.email} placeholder="e.g. example@url.com"/>
+        <input onChange={this.update('email')} id="email" type="text" value={this.state.email} placeholder="e.g. example@url.com"/>
         <input id="email" type="text" placeholder="Confirm email"/>
 
         <button onClick={() => this.setState({part:3})}>Next</button>
