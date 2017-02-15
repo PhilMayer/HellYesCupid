@@ -57,11 +57,10 @@ body {
   border-radius: 3px;
   border: 0;
   font-size: 18px;
-  padding-left: 20px;
-  padding-right: 36px;
   margin-right: 20px;
   height: 58px;
   cursor: pointer;
+  color: white;
 }
 
 .signup button {
@@ -74,6 +73,7 @@ body {
   font-size: 18px;
   font-weight: 400;
   cursor: pointer;
+  color: white;
 }
 
 .signup input {
