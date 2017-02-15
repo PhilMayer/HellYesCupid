@@ -2,12 +2,12 @@ import React from 'react';
 import {Link, hashHistory} from 'react-router';
 
 const Nav = (props) => {
-  
+
   if(props.currentUser) {
     return (
       <div>
         <h2>Welcome, {props.currentUser.username}!</h2>
-        <button onClick={() => props.logout()}>Logout</button>
+        <button onClick={() => props.logout().then(hashHistory.push('/login'))}>Logout</button>
       </div>
     );
   } else {
@@ -22,4 +22,7 @@ const Nav = (props) => {
   }
 };
 
+// <div>
+//   <Link to='/signup'>Sign up</Link>
+// </div>
 export default Nav;

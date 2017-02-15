@@ -5,6 +5,15 @@
   text-align: center;
   color: #fff;
 
+  @keyframes fade {
+    0%   {opacity: 0;}
+    100%  {opacity: 1;}
+  }
+
+  * {
+    animation: fade 0.2s ease-in;
+  }
+
 }
 
 .signup-dropdown {
@@ -86,7 +95,8 @@ label {
   text-align: left;
   width: 30px;
   display: block;
-  margin: 0px 0px 8px 298px;
+  margin: auto;
+  padding: 0px 315px 8px 0px;
 }
 
 .arrow {
@@ -100,4 +110,11 @@ label {
 
 .signup-email input:last-child {
   margin-bottom: 42px;
+}
+
+.signup p {
+  color: red;
+  margin: 0px 100px 20px 0px;
+  font-size: 15px;
+
 }
