@@ -26,7 +26,6 @@ class ProfileHeader extends React.Component {
   }
 
   handleSubmit () {
-
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     debugger
@@ -38,7 +37,7 @@ class ProfileHeader extends React.Component {
       <div className="profile-header-outer">
         <div className="profile-header-inner">
           <img src={this.props.profile_pic} />
-          <button Click={() => this.fileInput.click()}>Add</button>
+          <button onClick={() => this.fileInput.click()}>Add</button>
           <input type="file" onChange={this.updateFile} ref={input => this.fileInput = input} />
 
           <div className="profile-header-info">
