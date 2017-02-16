@@ -16,9 +16,9 @@ class Signup extends React.Component {
         genderDrop: false,
         sexualityDrop: false,
         zipcodeError: false,
-        ageError: false
+        ageError: false,
+        emailsMatch: false
     };
-    // this.signUpPart = 1;
   }
 
   part1Update(field) {
@@ -53,7 +53,7 @@ class Signup extends React.Component {
         <h2>Join the second best free dating site on Earth.</h2>
             <span className="i-am-a">I am a </span>
 
-              <div className="signup-dropdown" onClick={() => this.setState({sexualityDrop: true})}>{this.state.sexuality}<span className="arrow">▼</span>
+              <div className="signup-dropdown" onClick={() => this.setState({sexualityDrop: !this.state.sexualityDrop})}>{this.state.sexuality}<span className="arrow">▼</span>
                 <ul onClick={this.part1Update('sexuality')} className={this.state.sexualityDrop ? "" : "hidden"}>
                   <li value="Straight">Straight</li>
                   <li value="Gay">Gay</li>
@@ -61,14 +61,14 @@ class Signup extends React.Component {
                 </ul>
               </div>
 
-              <div className="signup-dropdown" onClick={() => this.setState({genderDrop: true})}>{this.state.gender}<span className="arrow">▼</span>
+              <div className="signup-dropdown" onClick={() => this.setState({genderDrop: !this.state.genderDrop})}>{this.state.gender}<span className="arrow">▼</span>
                 <ul onClick={this.part1Update('gender')} className={this.state.genderDrop ? "" : "hidden"}>
                   <li value="Woman">Woman</li>
                   <li value="Man">Man</li>
                 </ul>
               </div>
 
-            <button onClick={() => this.setState({part:2})}>Continue</button>
+            <button id="big-green-button" onClick={() => this.setState({part:2})}>Continue</button>
       </div>
     );
   }
@@ -90,12 +90,21 @@ class Signup extends React.Component {
         <label htmlFor="email">Email</label>
         <div className="signup-email">
           <input onChange={this.part2Update('email')} id="email" type="email" value={this.state.email} placeholder="e.g. example@url.com"/>
-          <input id="email" type="text" placeholder="Confirm email"/>
+          <input onChange={this.compareEmails()} id="email" type="email" value={this.state.confirmEmail} placeholder="Confirm email"/>
+          <p className={this.state.emailsMatch ? "" : "hidden"}>It's a match!</p>
         </div>
 
-        <button onClick={() => this.completePart2()}>Next</button>
+        <button id="big-blue-button" onClick={() => this.completePart2()}>Next</button>
       </div>
     );
+  }
+
+  compareEmails() {
+    return (e) => {
+      if(this.state.email === e.target.value) {
+        this.setState({emailsMatch: true});
+      }
+    };
   }
 
   completePart2() {
@@ -109,7 +118,6 @@ class Signup extends React.Component {
   }
 
   render () {
-
     switch(this.state.part) {
       case 1:
         return this.part1();

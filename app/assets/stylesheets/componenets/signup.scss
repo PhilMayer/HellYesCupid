@@ -18,7 +18,7 @@
 
 .signup-dropdown {
   background: #3260c7;
-  padding: 14px 36px 14px 14px;
+  padding: 20px 36px 20px 14px;
   width: 180px;
   margin-right: 20px;
   display: inline-block;
@@ -26,7 +26,6 @@
   position: relative;
   text-align: left;
   border-radius: 3px;
-
 }
 
 .signup-dropdown ul {
@@ -43,12 +42,10 @@
 
 .signup li {
   background: #3260c7;
-  padding: 14px 36px 14px 14px;
+  padding: 20px 36px 14px 14px;
   width: 180px;
   text-align: left;
 }
-
-
 
 .signup h2 {
   font-size: 32px;
@@ -63,16 +60,27 @@
 }
 
 
-.signup button {
+#big-green-button {
   box-shadow: 0 2px 1px #07408d;
   background-color: #29d58f;
   border-radius: 3px;
   width: 190px;
-  height: 58px;
+  height: 59px;
   border: 0;
   font-size: 18px;
   font-weight: 400;
   color: white;
+}
+
+#big-blue-button {
+  margin-top: 33px;
+  box-shadow: 0 2px 1px #07408d;
+  font-size: 18px;
+  font-weight: normal;
+  background-color: #4c7bd9;
+  height: 50px;
+  width: 347px;
+  line-height: 50px;
 }
 
 .signup input {
@@ -101,7 +109,7 @@ label {
 
 .arrow {
   font-size: 15px;
-  margin-left: 105px;
+  margin-left: 130px;
 }
 
 .signup-email input {
@@ -116,5 +124,15 @@ label {
   color: red;
   margin: 0px 100px 20px 0px;
   font-size: 15px;
+}
 
+.signup p:last-of-type {
+  color: green;
+  margin: 0px 268px 20px 0px;
+  font-size: 15px;
+}
+
+#errors {
+  color:red;
+  margin: 0px 0px 20px 143px;
 }
