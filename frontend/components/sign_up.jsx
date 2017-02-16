@@ -110,7 +110,7 @@ class Signup extends React.Component {
   completePart2() {
     if(this.state.age === "" || this.state.age < 18) {
       this.setState({ageError: true});
-    } else if (this.state.zipcode === "" || this.state.zipcode.length < 5) {
+    } else if (this.state.zipcode === "" || this.state.zipcode.length !== 5) {
       this.setState({zipcodeError: true});
     } else {
       this.setState({part:3});

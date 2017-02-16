@@ -8,7 +8,7 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
         username: "",
-        password: "",
+        password: " ",
         min_age: 18,
         max_age: 99
     };
@@ -58,8 +58,9 @@ class SessionForm extends React.Component {
 
           <input onChange={this.update('username')} type="text" value={this.state.username} placeholder="username"/>
           <input onChange={this.update('password')} type="password" value={this.state.password} placeholder="password"/>
-
+            
           <p id="errors">{errors}</p>
+          <p className={this.state.password.length > 5 ? "" : "hidden"}>That right there is a password my friend</p>
 
           <button id="big-blue-button" type="submit">{submitButton}</button>
           </form>

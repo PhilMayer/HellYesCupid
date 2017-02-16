@@ -11,7 +11,7 @@
   }
 
   * {
-    animation: fade 0.2s ease-in;
+    animation: fade 0.3s;
   }
 
 }
@@ -72,6 +72,10 @@
   color: white;
 }
 
+#big-green-button:hover {
+  background-color: #29d56f;
+}
+
 #big-blue-button {
   margin-top: 33px;
   box-shadow: 0 2px 1px #07408d;
@@ -81,6 +85,10 @@
   height: 50px;
   width: 347px;
   line-height: 50px;
+}
+
+#big-blue-button:hover {
+  background-color: #5c7bd9;
 }
 
 .signup input {
