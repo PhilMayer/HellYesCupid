@@ -1,9 +1,13 @@
 import React from 'react';
+import ProfileHeaderContainer from './profile_header_container';
+import ProfileQuestionsContainer from './profile_questions_container';
 
 const Profile = (props) => {
   return (
-    <ProfileHeader />
-    <ProfileQuestions />
+    <div>
+      <ProfileHeaderContainer/>
+      <ProfileQuestionsContainer/>
+    </div>
   );
 }
 

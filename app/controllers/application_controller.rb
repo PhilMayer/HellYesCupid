@@ -26,6 +26,6 @@ class ApplicationController < ActionController::Base
   def user_params
     params.require(:user).permit(:username, :password, :email, :gender, :sexuality, :age, :country, :zipcode,
     :min_age, :max_age, :profile_pic, :summary, :doing_with_life, :really_good_at,
-    :favorite_things, :six_things, :think_about, :typical_friday, :message_me_if)
+    :favorite_things, :six_things, :think_about, :typical_friday, :message_me_if, :image)
   end
 end

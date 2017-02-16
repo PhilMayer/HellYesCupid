@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
  validates :password, length: {minimum: 6, allow_nil:true}
  after_initialize :ensure_session_token
 
+ has_attached_file :image, default_url: "test.png"
+ validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+
  def self.find_by_credentials(username, pw)
    user = User.find_by(username: username)
    return nil unless user && BCrypt::Password.new(user.password_digest).is_password?(pw)

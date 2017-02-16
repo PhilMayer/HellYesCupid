@@ -16,7 +16,7 @@
 
 @import "base/reset.css";
 @import "components/nav.css";
-@import "components/signup.scss";
+@import "components/*";
 
 body {
   font-family: 'Open Sans',sans-serif;

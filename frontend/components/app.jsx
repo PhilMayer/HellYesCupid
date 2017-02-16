@@ -1,5 +1,5 @@
 import React from 'react';
-import NavContainer from './nav_container';
+import NavContainer from './nav/nav_container';
 
 const App = ({children}) => {
   return (
