@@ -20,6 +20,7 @@ const Root = ({store}) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App }>
           <IndexRoute component={ QuestionContainer } />
+          <Route path="/profile" component={Profile} />
           <Route path="/login" component={ SessionFormContainer } />
           <Route path="/signup" component={ SignUp } />
         </Route>
