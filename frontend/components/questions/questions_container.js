@@ -3,10 +3,11 @@ import Questions from './questions';
 import {connect} from 'react-redux';
 import {fetchQuestions} from '../../actions/question_actions'
 
-const mapStateToProps = ({questions}) => {
+const mapStateToProps = ({session: {currentUser}, questions}) => {
+  const responses = Object.keys(currentUser.questionResponses);
   return {
-    // titles: Object.keys(questions).map(id => questions[id].title),
-    questions
+    questions,
+    userResponses: responses
   }
 }
 

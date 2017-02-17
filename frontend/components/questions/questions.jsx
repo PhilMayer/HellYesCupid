@@ -8,15 +8,13 @@ class Questions extends React.Component {
 
   componentDidMount () {
     this.props.fetchQuestions();
-
-    return;
   }
 
   render() {
     let questions;
     if(this.props.questions) {
       questions = this.props.questions.map(question => (
-        <SingleQuestion key={question.id} question={question} />
+        <SingleQuestion key={question.id} question={question} userResponses={this.props.userResponses}/>
       ))
     }
     return (
