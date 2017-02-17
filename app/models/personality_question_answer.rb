@@ -7,5 +7,9 @@ class PersonalityQuestionAnswer < ApplicationRecord
     class_name: "PersonalityQuestion"
   )
 
-  has_many :user_question_responses
+  has_many(
+    :user_responses,
+    foreign_key: :answer_id,
+    class_name: "UserQuestionResponse"
+  )
 end

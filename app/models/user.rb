@@ -5,7 +5,11 @@ class User < ActiveRecord::Base
  validates :password, length: {minimum: 6, allow_nil:true}
  after_initialize :ensure_session_token
 
- has_many :user_question_responses
+ has_many(
+  :question_responses,
+  foreign_key: :user_id,
+  class_name: "UserQuestionResponse"
+ )
 
  has_attached_file :image, default_url: "test.png"
  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
