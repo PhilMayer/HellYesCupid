@@ -37,6 +37,7 @@
   text-transform: none;
   overflow: hidden;
   border-radius: 2px;
+  
 }
 
 .profile-header-inner button:hover {
@@ -64,34 +65,4 @@
   padding: 0 5px 0 4px;
   font-weight: 400;
   color: #9dbaf2;
-}
-
-.profile-question {
-  font-weight: 600;
-  color: #474d59;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-.fa-pencil {
-  color: #1fc174;
-  margin-left: 15px;
-  cursor: pointer;
-}
-
-textarea {
-  height: 66px;
-  padding: 20px;
-  min-height: 200px;
-  margin-top: 22px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  width: 510px;
-  margin: 0;
-  border-color: #aeb4bf;
-  border: 1px solid #ccd0d9;
-  color: #5e6573;
 }

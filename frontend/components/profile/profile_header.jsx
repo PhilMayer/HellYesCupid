@@ -36,8 +36,15 @@ class ProfileHeader extends React.Component {
     return (
       <div className="profile-header-outer">
         <div className="profile-header-inner">
-          <img src={this.props.profile_pic} />
-          <button onClick={() => this.fileInput.click()}>Add</button>
+          <img
+            onMouseOver={() => this.setState({add: true})}
+            onMouseLeave={() => this.setState({add: false})}
+            src={this.props.profile_pic} />
+          <button
+            onClick={() => this.fileInput.click()}
+            className={this.state.add ? "" : "hidden"}>
+            Add
+          </button>
           <input type="file" onChange={this.updateFile} ref={input => this.fileInput = input} />
 
           <div className="profile-header-info">
