@@ -71,7 +71,7 @@ class ProfileQuestionsItem extends React.Component {
             </textarea>
 
             <div className="buttons">
-              <button className={this.state.canSave ? "" : ""} type="submit">Save</button>
+              <button className={this.state.canSave ? "turn-green" : ""} type="submit">Save</button>
               <button onClick={() => this.setState({editing: false})}>Cancel</button>
             </div>
 

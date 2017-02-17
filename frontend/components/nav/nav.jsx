@@ -5,18 +5,18 @@ const Nav = (props) => {
 
   if(props.currentUser) {
     return (
-      <div>
-        <h2>Welcome, {props.currentUser.username}!</h2>
+      <div className="nav">
+        <h2>Browse Matches</h2>
         <button onClick={() => props.logout().then(hashHistory.push('/login'))}>Logout</button>
       </div>
     );
   } else {
     return (
-      <div className="nav">
+      <div className="nav boobies">
+        <span>Have an account?</span>
         <div>
           <Link to='/login'>Sign in</Link>
         </div>
-        <span>Have an account?</span>
       </div>
     );
   }

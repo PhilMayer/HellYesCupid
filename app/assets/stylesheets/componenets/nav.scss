@@ -1,6 +1,20 @@
 .nav {
   background: #104da1;
+  border-bottom: 1px solid rgba(157,186,242,0.25);
+  color: #d6e1f9;
+  height: 60px;
+  // line-height: 61px;
+  display: flex;
+  justify-content: space-between;
+  &.boobies {
+    justify-content: flex-end;
+  }
 }
+
+.nav button {
+  margin-right: 50px;
+}
+
 .nav div {
   float: right;
   display: inline-block;
@@ -10,7 +24,7 @@
   border: 1px solid #4879c1;
   color: #fff;
   border-radius: 2px;
-  margin: 40px 40px 0px 23px;
+  margin: 10px 40px 8px 23px;
   padding: 10px 15px;
   cursor: pointer;
 }
@@ -21,6 +35,6 @@
 
 .nav span {
   float:right;
-  margin-top: 53px;
+  margin-top: 25px;
   color: white;
 }

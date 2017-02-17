@@ -67,6 +67,10 @@ textarea {
   text-align: center;
 }
 
+.turn-green {
+  background-color: #29d58f;
+}
+
 .profile-questions button:first-child:hover {
   background-color: #29d56f;
   color: white;
