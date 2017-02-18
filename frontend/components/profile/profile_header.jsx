@@ -7,7 +7,7 @@ class ProfileHeader extends React.Component {
     this.state = {
       imageFile: null,
       add: false
-    }
+    };
     this.updateFile = this.updateFile.bind(this);
   }
 
@@ -28,21 +28,20 @@ class ProfileHeader extends React.Component {
   handleSubmit () {
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
-    debugger
     this.props.updateUser(this.props.id, formData);
   }
 
+  // onMouseOver={() => this.setState({add: true})}
+  // onMouseLeave={() => this.setState({add: false})}
   render() {
     return (
       <div className="profile-header-outer">
         <div className="profile-header-inner">
           <img
-            onMouseOver={() => this.setState({add: true})}
-            onMouseLeave={() => this.setState({add: false})}
             src={this.props.profile_pic} />
           <button
             onClick={() => this.fileInput.click()}
-            className={this.state.add ? "" : "hidden"}>
+            className={this.state.add ? "" : ""}>
             Add
           </button>
           <input type="file" onChange={this.updateFile} ref={input => this.fileInput = input} />

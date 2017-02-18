@@ -29,5 +29,5 @@ export const updateUser = (id, user) => {
     contentType: false,
     dataType: 'json',
     data: user
-  })
-}
+  });
+};

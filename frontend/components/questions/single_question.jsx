@@ -1,13 +1,20 @@
 import React from 'react';
-import {submitResponse} from '../../util/question_api_util'
+import {submitResponse} from '../../util/question_api_util';
 
 class SingleQuestion extends React.Component {
   constructor(props) {
     super(props);
+
+    let existingAnswer;
+    if(this.props.userResponses) {
+      existingAnswer = Object.keys(this.props.userResponses).pop();
+    }
+
     this.state={
       editing: false,
-      updatedResponse: this.props.question.answers.id //NOOOOOPE
-    }
+      updatedResponse: existingAnswer
+    };
+
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -16,42 +23,44 @@ class SingleQuestion extends React.Component {
     if(this.state.editing) {
       this.handleSubmit();
     } else {
-      this.setState({editing: true})
+      this.setState({editing: true});
     }
   }
 
   handleSubmit () {
-    const id = this.props.userId;
+    const userId = this.props.userId;
     const response = this.state.updatedResponse;
-    submitResponse({user_id: id, answer_id: response})
-    this.setState({editing: false})
+
+    submitResponse({user_id: userId, answer_id: response});
+    
+    this.setState({editing: false});
   }
 
   render() {
     let displayAnswers;
     const answers = this.props.question.answers.map(answer => {
-      if (this.props.userResponses.includes(answer.id.toString())){
-        displayAnswers = true;
-      }
+      displayAnswers = this.props.userResponses ? true : false;
+
       return (
         <div>
           <span className="dot">•</span>
           <li key={answer.id}>{answer.answer}</li>
         </div>
-      )
-    })
+      );
+    });
 
     const radioAnswers = this.props.question.answers.map(answer => {
       return(
         <label>
           <input
             type="radio"
-            checked={this.state.updatedResponse === answer.id}
-            onChange={() => this.setState({updatedResponse: answer.id})}/>
+            value={answer.id}
+            checked={this.state.updatedResponse === answer.id.toString()}
+            onChange={(e) => this.setState({updatedResponse: e.currentTarget.value})}/>
           {answer.answer}
         </label>
-      )
-    })
+      );
+    });
 
     return (
       <li className="question">
@@ -62,7 +71,7 @@ class SingleQuestion extends React.Component {
             {answers}
           </ul>
 
-          <div className={this.state.editing ? "hidden" : "re-answer"}
+          <div className={!displayAnswers || this.state.editing ? "hidden" : "re-answer"}
             onClick={this.handleClick}>
             Re-answer
           </div>

@@ -3,7 +3,7 @@ class UserQuestionResponse < ApplicationRecord
 
   belongs_to :user
   belongs_to(
-    :personality_question_answers,
+    :personality_question_answer,
     foreign_key: :answer_id,
     class_name: "PersonalityQuestionAnswer"
   )

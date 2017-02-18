@@ -5,7 +5,11 @@ import {fetchQuestions} from '../../actions/question_actions'
 import {updateUser} from '../../actions/session_actions'
 
 const mapStateToProps = ({session: {currentUser}, questions}) => {
-  const responses = Object.keys(currentUser.questionResponses);
+  let responses;
+   if(currentUser.questionResponses) {
+     responses = currentUser.questionResponses;
+   }
+
   return {
     questions,
     userResponses: responses,

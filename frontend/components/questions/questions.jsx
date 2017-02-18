@@ -18,8 +18,8 @@ class Questions extends React.Component {
           key={question.id}
           question={question}
           userId={this.props.userId}
-          userResponses={this.props.userResponses}/>
-      ))
+          userResponses={this.props.userResponses[question.id]}/>
+      ));
     }
     return (
       <ul>
