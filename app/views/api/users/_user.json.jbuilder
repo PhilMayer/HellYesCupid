@@ -8,8 +8,8 @@ json.image_url user.image.url
 json.questionResponses do
   user.question_responses.each do |response|
     json.set! response.personality_question_answer.question_id do
-      json.set! response.answer_id do
-        json.extract! response, :id, :answer_id
+      json.set! response.id do
+        json.extract! response, :answer_id
       end
     end
   end

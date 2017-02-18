@@ -7,7 +7,8 @@ class SingleQuestion extends React.Component {
 
     let existingAnswer;
     if(this.props.userResponses) {
-      existingAnswer = Object.keys(this.props.userResponses).pop();
+      const mostRecentResponse = Object.keys(this.props.userResponses).pop();
+      existingAnswer = this.props.userResponses[mostRecentResponse].answer_id;
     }
 
     this.state={
@@ -32,7 +33,7 @@ class SingleQuestion extends React.Component {
     const response = this.state.updatedResponse;
 
     submitResponse({user_id: userId, answer_id: response});
-    
+
     this.setState({editing: false});
   }
 
@@ -42,21 +43,22 @@ class SingleQuestion extends React.Component {
       displayAnswers = this.props.userResponses ? true : false;
 
       return (
-        <div>
+        <div key={answer.id}>
           <span className="dot">•</span>
-          <li key={answer.id}>{answer.answer}</li>
+          <li>{answer.answer}</li>
         </div>
       );
     });
 
     const radioAnswers = this.props.question.answers.map(answer => {
+      
       return(
-        <label>
+        <label key={answer.id}>
           <input
             type="radio"
             value={answer.id}
-            checked={this.state.updatedResponse === answer.id.toString()}
-            onChange={(e) => this.setState({updatedResponse: e.currentTarget.value})}/>
+            checked={this.state.updatedResponse === answer.id}
+            onChange={(e) => this.setState({updatedResponse: answer.id})}/>
           {answer.answer}
         </label>
       );
