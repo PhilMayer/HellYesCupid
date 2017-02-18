@@ -9,6 +9,6 @@ const Profile = (props) => {
       <ProfileQuestionsContainer/>
     </div>
   );
-}
+};
 
 export default Profile;

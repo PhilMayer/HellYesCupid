@@ -22,9 +22,12 @@ class Questions extends React.Component {
       ));
     }
     return (
-      <ul>
-        {questions}
-      </ul>
+      <div>
+        <h2 className="questions-header">Match Questions</h2>
+        <ul>
+          {questions}
+        </ul>
+      </div>
     );
   }
 }

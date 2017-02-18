@@ -5,7 +5,7 @@ export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
 export const fetchQuestions = () => (dispatch) => {
   return APIUtil.fetchQuestions()
     .then((questions) => dispatch(receiveQuestions(questions)));
-}
+};
 
 // export const submitResponse = (response) => (dispatch) => {
 //   return APIUtil.submitResponse()
@@ -15,4 +15,4 @@ export const fetchQuestions = () => (dispatch) => {
 const receiveQuestions = (questions) => ({
   type: RECEIVE_QUESTIONS,
   questions
-})
+});

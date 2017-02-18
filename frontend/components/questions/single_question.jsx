@@ -37,21 +37,8 @@ class SingleQuestion extends React.Component {
     this.setState({editing: false});
   }
 
-  render() {
-    let displayAnswers;
-    const answers = this.props.question.answers.map(answer => {
-      displayAnswers = this.props.userResponses ? true : false;
-
-      return (
-        <div key={answer.id}>
-          <span className="dot">•</span>
-          <li>{answer.answer}</li>
-        </div>
-      );
-    });
-
-    const radioAnswers = this.props.question.answers.map(answer => {
-      
+  getRadioButtons () {
+    return this.props.question.answers.map(answer => {
       return(
         <label key={answer.id}>
           <input
@@ -63,6 +50,25 @@ class SingleQuestion extends React.Component {
         </label>
       );
     });
+  }
+
+  render() {
+    let displayAnswers;
+
+    const answers = this.props.question.answers.map(answer => {
+      displayAnswers = this.props.userResponses ? true : false;
+
+      return (
+        <div key={answer.id}>
+          <span className={answer.id === this.state.updatedResponse ? "checkmark" : "dot"}>
+            {answer.id === this.state.updatedResponse ? "✓" : "•"}
+          </span>
+          <li id={answer.id === this.state.updatedResponse ? "selected-answer" : ""}>{answer.answer}</li>
+        </div>
+      );
+    });
+
+    const radioAnswers = this.getRadioButtons();
 
     return (
       <li className="question">
@@ -88,8 +94,14 @@ class SingleQuestion extends React.Component {
           className={!this.state.editing && displayAnswers ? "hidden" : "answer-button"}>
           Answer
         </button>
+        <button
+          onClick={() => this.setState({editing: false})}
+          className={this.state.editing ? "cancel-button" : "hidden"}>
+          Cancel
+        </button>
       </li>
     );
   }
 }
+
 export default SingleQuestion;
