@@ -14,7 +14,11 @@ class Questions extends React.Component {
     let questions;
     if(this.props.questions) {
       questions = this.props.questions.map(question => (
-        <SingleQuestion key={question.id} question={question} userResponses={this.props.userResponses}/>
+        <SingleQuestion
+          key={question.id}
+          question={question}
+          userId={this.props.userId}
+          userResponses={this.props.userResponses}/>
       ))
     }
     return (

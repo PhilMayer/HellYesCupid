@@ -1,10 +1,12 @@
 import React from 'react';
+import {submitResponse} from '../../util/question_api_util'
+
 class SingleQuestion extends React.Component {
   constructor(props) {
     super(props);
     this.state={
       editing: false,
-      updatedResponse: ""
+      updatedResponse: this.props.question.answers.id //NOOOOOPE
     }
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,42 +21,51 @@ class SingleQuestion extends React.Component {
   }
 
   handleSubmit () {
-    updateUser()
+    const id = this.props.userId;
+    const response = this.state.updatedResponse;
+    submitResponse({user_id: id, answer_id: response})
+    this.setState({editing: false})
   }
 
   render() {
     let displayAnswers;
-    const answers = this.props.question.answers.map(ans => {
-      if (this.props.userResponses.includes(ans.id.toString())){
+    const answers = this.props.question.answers.map(answer => {
+      if (this.props.userResponses.includes(answer.id.toString())){
         displayAnswers = true;
       }
-      return <li key={ans.id}>{ans.answer}</li>
+      return (
+        <div>
+          <span className="dot">•</span>
+          <li key={answer.id}>{answer.answer}</li>
+        </div>
+      )
     })
 
-    const radioAnswers = this.props.question.answers.map(ans => {
+    const radioAnswers = this.props.question.answers.map(answer => {
       return(
-        <label key={ans.id}>
+        <label>
           <input
             type="radio"
-            value={ans.answer}
-            checked={this.state.updatedResponse === ans.answer}
-            onChange={() => this.setState({updatedResponse: ans.answer})}/>
-          {ans.answer}
+            checked={this.state.updatedResponse === answer.id}
+            onChange={() => this.setState({updatedResponse: answer.id})}/>
+          {answer.answer}
         </label>
       )
     })
 
-    // <div onClick={() => this.setState({editing: true})}>Re-answer</div>
-    // <button onClick={this.handClick}>Answer</button>
-
     return (
-      <li>
+      <li className="question">
         <p>{this.props.question.title}</p>
 
         <div>
-          <ul className={displayAnswers ? "" : "hidden"}>
+          <ul className={!this.state.editing && displayAnswers ? "" : "hidden"}>
             {answers}
           </ul>
+
+          <div className={this.state.editing ? "hidden" : "re-answer"}
+            onClick={this.handleClick}>
+            Re-answer
+          </div>
         </div>
 
         <div className={this.state.editing ? "" : "hidden"}>
@@ -63,7 +74,7 @@ class SingleQuestion extends React.Component {
 
         <button
           onClick={this.handleClick}
-          className={displayAnswers ? "hidden" : ""}>
+          className={!this.state.editing && displayAnswers ? "hidden" : "answer-button"}>
           Answer
         </button>
       </li>

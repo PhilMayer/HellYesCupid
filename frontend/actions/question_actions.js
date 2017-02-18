@@ -7,6 +7,11 @@ export const fetchQuestions = () => (dispatch) => {
     .then((questions) => dispatch(receiveQuestions(questions)));
 }
 
+// export const submitResponse = (response) => (dispatch) => {
+//   return APIUtil.submitResponse()
+//     .then()
+// }
+
 const receiveQuestions = (questions) => ({
   type: RECEIVE_QUESTIONS,
   questions
