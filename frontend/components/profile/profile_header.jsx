@@ -1,5 +1,5 @@
-
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -9,6 +9,11 @@ class ProfileHeader extends React.Component {
       add: false
     };
     this.updateFile = this.updateFile.bind(this);
+  }
+
+  componentDidMount () {
+    const id = parseInt(this.props.router.params.id);
+    this.props.fetchUser(id);
   }
 
   updateFile (e) {
@@ -58,4 +63,4 @@ class ProfileHeader extends React.Component {
   }
 }
 
-export default ProfileHeader;
+export default withRouter(ProfileHeader);

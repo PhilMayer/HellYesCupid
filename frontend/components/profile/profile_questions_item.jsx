@@ -1,12 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 
 class ProfileQuestionsItem extends React.Component {
   constructor(props) {
     super(props);
+    const isOwnProfile = (this.props.currentUser === parseInt(this.props.router.params.id));
+
     this.state = {
       editing: false,
       questionText: this.questionText(),
       responseText: this.props.response,
+      canEdit: isOwnProfile,
       canSave: false
     };
 
@@ -45,6 +49,7 @@ class ProfileQuestionsItem extends React.Component {
   }
 
   render() {
+
     let submittedText = "";
     if(this.state.responseText && !this.state.editing) {
       submittedText = this.props.response;
@@ -56,7 +61,7 @@ class ProfileQuestionsItem extends React.Component {
           <span className="profile-question">{this.state.questionText}</span>
 
           <i onClick={() => this.setState({editing: true})}
-            className={this.state.editing ? "hidden" : "fa fa-pencil"}
+            className={!this.state.canEdit || this.state.editing ? "hidden" : "fa fa-pencil"}
             aria-hidden="true">
           </i>
 
@@ -82,4 +87,4 @@ class ProfileQuestionsItem extends React.Component {
   }
 }
 
-export default ProfileQuestionsItem;
+export default withRouter(ProfileQuestionsItem);

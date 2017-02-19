@@ -1,15 +1,18 @@
 import React from 'react';
-import ProfileQuestionsItem from './profile_questions_item'
+import ProfileQuestionsItem from './profile_questions_item';
 
 const ProfileQuestions = (props) => {
-  let questions = Object.keys(props)
+  let questions = Object.keys(props);
   questions = questions.slice(1, -1);
+
   questions = questions.map((question, idx) => (
     <li key={idx}>
-      <ProfileQuestionsItem question={question}
-        id={props.id}
+      <ProfileQuestionsItem
+        question={question}
+        profileId={props.id}
         response={props[question]}
         updateUser={props.updateUser}
+        currentUser={props.currentUser}
         />
     </li>
     )
@@ -20,7 +23,7 @@ const ProfileQuestions = (props) => {
         {questions}
       </ul>
     );
-}
+};
 
 
 export default ProfileQuestions;
