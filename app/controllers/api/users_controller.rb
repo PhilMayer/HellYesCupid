@@ -10,7 +10,16 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    gender = current_user.gender
+    case current_user.sexuality
+    when "Straight"
+      @users = gender == "Man" ? User.where("gender = 'Woman'") : User.where("gender = 'Man'")
+    when "Gay"
+      @users = gender == "Man" ? User.where("gender = 'Man'") : User.where("gender = 'Woman'")
+    else
+      @users = User.all
+    end
+
     render 'api/users/index'
   end
 

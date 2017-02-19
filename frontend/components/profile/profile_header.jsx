@@ -3,17 +3,18 @@ import { withRouter } from 'react-router';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
+
     super(props);
     this.state = {
+      add: false,
       imageFile: null,
-      add: false
+      id: parseInt(this.props.router.params.id)
     };
     this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount () {
-    const id = parseInt(this.props.router.params.id);
-    this.props.fetchUser(id);
+    this.props.fetchUser(this.state.id);
   }
 
   updateFile (e) {
@@ -31,9 +32,10 @@ class ProfileHeader extends React.Component {
   }
 
   handleSubmit () {
+    debugger
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
-    this.props.updateUser(this.props.id, formData);
+    this.props.updateUser(this.state.id, formData);
   }
 
   // onMouseOver={() => this.setState({add: true})}
