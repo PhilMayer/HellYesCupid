@@ -91,6 +91,10 @@
   background-color: #5c7bd9;
 }
 
+#big-blue-button:active {
+  background-color: #1c7bd9;
+}
+
 .signup input {
   text-align: left;
   display: block;
@@ -136,7 +140,7 @@ label {
 
 .signup p:last-of-type {
   color: green;
-  margin: 0px 268px 20px 0px;
+  margin: 0px 85px 20px 0px;
   font-size: 15px;
 }
 

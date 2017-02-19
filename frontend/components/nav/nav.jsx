@@ -1,8 +1,7 @@
 import React from 'react';
-import {Link, hashHistory} from 'react-router';
+import {Link, hashHistory, withRouter} from 'react-router';
 
 const Nav = (props) => {
-
   if(props.currentUser) {
     return (
       <div className="nav">
@@ -10,7 +9,7 @@ const Nav = (props) => {
         <button onClick={() => props.logout().then(hashHistory.push('/login'))}>Logout</button>
       </div>
     );
-  } else {
+  } else if (props.location.pathname === "/signup"){
     return (
       <div className="nav boobies">
         <span>Have an account?</span>
@@ -19,10 +18,16 @@ const Nav = (props) => {
         </div>
       </div>
     );
+  } else {
+    return (
+      <div className="nav boobies">
+          <Link to='/signup'>Sign Up</Link>
+      </div>
+    );
   }
 };
 
 // <div>
 //   <Link to='/signup'>Sign up</Link>
 // </div>
-export default Nav;
+export default withRouter(Nav);

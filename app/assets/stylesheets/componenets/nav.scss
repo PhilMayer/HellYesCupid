@@ -21,15 +21,15 @@
   vertical-align: middle;
   font-size: 15px;
   font-weight: 400;
-  border: 1px solid #4879c1;
+  // border: 1px solid #4879c1;
   color: #fff;
   border-radius: 2px;
-  margin: 10px 40px 8px 23px;
-  padding: 10px 15px;
+  margin: 10px 40px 8px 0px;
+  padding: 10px 0px;
   cursor: pointer;
 }
 
-.nav div:hover {
+.nav a:hover {
   background-color: #103da1;
 }
 
@@ -37,4 +37,16 @@
   float:right;
   margin-top: 25px;
   color: white;
+}
+
+.nav a:last-of-type {
+  margin: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid #4879c1;
+  color: #fff;
+  border-radius: 2px;
+  margin: 10px 40px 8px 23px;
+  padding: 10px 15px;
+  cursor: pointer;
 }
