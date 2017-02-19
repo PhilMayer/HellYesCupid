@@ -10,6 +10,12 @@ class Questions extends React.Component {
     this.props.fetchQuestions();
   }
 
+  getResponses (question) {
+    if (this.props.userResponses) {
+      return this.props.userResponses[question.id];
+    }
+  }
+
   render() {
     let questions;
     if(this.props.questions) {
@@ -18,7 +24,7 @@ class Questions extends React.Component {
           key={question.id}
           question={question}
           userId={this.props.userId}
-          userResponses={this.props.userResponses[question.id]}/>
+          userResponses={this.getResponses(question)}/>
       ));
     }
     return (
