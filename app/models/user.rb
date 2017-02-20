@@ -27,6 +27,17 @@ class User < ActiveRecord::Base
    self.password_digest = BCrypt::Password.create(password)
  end
 
+ def preference
+   case self.sexuality
+   when "Straight"
+      return self.gender == "Man" ? "Woman" : "Man"
+   when "Gay"
+     return self.gender == "Man" ? "Man" : "Woman"
+   else
+     return ["Man", "Woman"]
+   end
+ end
+
  def generate_session_token
    self.session_token = SecureRandom::urlsafe_base64(16)
  end

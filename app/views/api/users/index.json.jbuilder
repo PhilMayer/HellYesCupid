@@ -1,4 +1,4 @@
-@users.each do |user|
+@matches.each do |user|
   json.set! user.id do
     json.extract! user, :username, :age, :zipcode, :image, :id
 

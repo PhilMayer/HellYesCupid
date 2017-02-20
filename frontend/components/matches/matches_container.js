@@ -13,7 +13,7 @@ const mapStateToProps = ({matches, session: {currentUser}}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchMatches: () => dispatch(fetchMatches())
+    fetchMatches: (params) => dispatch(fetchMatches(params))
   }
 }
 

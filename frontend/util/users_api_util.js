@@ -1,7 +1,15 @@
-export const fetchUsers = () => {
+export const fetchUsers = (params) => {
+  // let updateParams = params;
+  // if(!updateParams) {
+  //   updateParams = {};
+  // } else {
+  //   updateParams = {user: params};
+  // }
+
   return $.ajax({
     method: "GET",
-    url: "api/users"  
+    url: "api/users",
+    data: {user: params}
   });
 };
 

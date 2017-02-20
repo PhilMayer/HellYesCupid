@@ -10,16 +10,19 @@ class Api::UsersController < ApplicationController
   end
 
   def index
-    gender = current_user.gender
-    case current_user.sexuality
-    when "Straight"
-      @users = gender == "Man" ? User.where("gender = 'Woman'") : User.where("gender = 'Man'")
-    when "Gay"
-      @users = gender == "Man" ? User.where("gender = 'Man' and id != #{current_user.id}") :
-        User.where("gender = 'Woman' and id != #{current_user.id}")
+    if params[:user]
+      min_age = params[:user][:min_age].to_i
+      max_age = params[:user][:max_age].to_i
+      current_user.update!(min_age: min_age, max_age: max_age)
     else
-      @users = User..where("id != #{current_user.id}")
+      min_age = current_user.min_age
+      max_age = current_user.max_age
     end
+
+    # @matches = User.where("age >= #{min_age} and age <= #{max_age}")
+    @matches = User.where(:age => (min_age)..(max_age))
+      .where.not(:id => current_user.id)
+      .where(:gender => current_user.preference)
 
     render 'api/users/index'
   end

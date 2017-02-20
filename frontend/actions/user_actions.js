@@ -3,8 +3,8 @@ import * as APIUtil from '../util/users_api_util';
 export const RECEIVE_USER = "RECEIVE_USER";
 export const RECEIVE_MATCHES = "RECEIVE_MATCHES";
 
-export const fetchMatches = () => (dispatch) => {
-    return APIUtil.fetchUsers()
+export const fetchMatches = (params) => (dispatch) => {
+    return APIUtil.fetchUsers(params)
       .then((matches) => dispatch(receiveMatches(matches)));
 };
 
