@@ -60,7 +60,7 @@ class SessionForm extends React.Component {
 
           <p id="errors">{errors}</p>
           <p className={this.state.password && this.state.password.length > 5 ? "" : "hidden"}>
-            That right there is a password my friend
+            This is getting exciting.
           </p>
 
           <button id="big-blue-button" type="submit">{submitButton}</button>

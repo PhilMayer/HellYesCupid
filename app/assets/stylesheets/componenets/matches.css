@@ -1,4 +1,55 @@
+.matches {
+  display: flex;
+  max-width: 1100px;
+}
+
+.match {
+  display: block;
+  position: relative;
+  width: 280;
+  height: 385px;
+  border-radius: 6px;
+  margin: 0px 10px 40px 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
 .match img {
-  width: 100px;
+  width: 100%;
   height: auto;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.match p {
+  color: #5e6573;
+  text-align: center;
+}
+
+.match p:first-child {
+  font-size: 18px;
+}
+
+.match p:last-child {
+  font-size: 15px;
+}
+
+.matches-user-info {
+  font-size: 15px;
+  text-shadow: center;
+  color: #949aa6;
+  text-align: center;
+  margin-bottom: 23px;
+}
+
+.matches-username {
+  display: block;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+  color: #5e6573
+}
+
+.matches-username:hover {
+  color: #474d59;
 }

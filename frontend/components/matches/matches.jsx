@@ -21,7 +21,7 @@ export default class Matches extends React.Component {
     }
 
     return(
-      <section>
+      <section className="matches">
         {matches}
       </section>
     );

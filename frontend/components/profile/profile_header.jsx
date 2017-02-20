@@ -32,7 +32,6 @@ class ProfileHeader extends React.Component {
   }
 
   handleSubmit () {
-    debugger
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
     this.props.updateUser(this.state.id, formData);
@@ -49,7 +48,7 @@ class ProfileHeader extends React.Component {
           <button
             onClick={() => this.fileInput.click()}
             className={this.state.add ? "" : ""}>
-            Add
+            Change
           </button>
           <input type="file" onChange={this.updateFile} ref={input => this.fileInput = input} />
 

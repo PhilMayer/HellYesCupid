@@ -1,6 +1,6 @@
 @users.each do |user|
   json.set! user.id do
-    json.extract! user, :username, :age, :zipcode, :image
+    json.extract! user, :username, :age, :zipcode, :image, :id
 
     # json.questionResponses do
     #   user.question_responses.each do |response|
