@@ -30,7 +30,7 @@ class Signup extends React.Component {
   }
 
   part2Update(field) {
-    const err = `${field}Error`
+    const err = `${field}Error`;
     return (e) => {
       this.setState({[field]: e.target.value, [err]: false});
     };
@@ -85,7 +85,7 @@ class Signup extends React.Component {
 
         <label htmlFor="zipcode">Zipcode</label>
         <input onChange={this.part2Update('zipcode')} id="zipcode" type="text" value={this.state.zipcode} placeholder="e.g. 10001"/>
-        <p className={this.state.zipcodeError ? "" : "hidden"}>Yeeah...enter a valid zipcode please</p>
+        <p className={this.state.zipcodeError ? "" : "hidden"}>Yeeah...enter a valid zipcode please</p>q
 
         <label htmlFor="email">Email</label>
         <div className="signup-email">
