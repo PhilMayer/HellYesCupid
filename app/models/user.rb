@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
  validates :username, :password_digest, :session_token,
   :gender, :sexuality, :age, :zipcode, :min_age, :max_age, presence: true
-  
+
  validates :password, length: {minimum: 6, allow_nil: true}
  after_initialize :ensure_session_token
 

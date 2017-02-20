@@ -3,9 +3,12 @@ import Matches from './matches';
 import {connect} from 'react-redux';
 import { fetchMatches } from '../../actions/user_actions';
 
-const mapStateToProps = ({matches}) => {
+const mapStateToProps = ({matches, session: {currentUser}}) => {
   let arrayOfMatches = Object.keys(matches).map(id => matches[id])
-  return {matches: arrayOfMatches}
+  return {
+    currentUser,
+    matches: arrayOfMatches
+  }
 }
 
 const mapDispatchToProps = (dispatch) => {

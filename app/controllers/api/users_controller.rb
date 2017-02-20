@@ -15,9 +15,10 @@ class Api::UsersController < ApplicationController
     when "Straight"
       @users = gender == "Man" ? User.where("gender = 'Woman'") : User.where("gender = 'Man'")
     when "Gay"
-      @users = gender == "Man" ? User.where("gender = 'Man'") : User.where("gender = 'Woman'")
+      @users = gender == "Man" ? User.where("gender = 'Man' and id != #{current_user.id}") :
+        User.where("gender = 'Woman' and id != #{current_user.id}")
     else
-      @users = User.all
+      @users = User..where("id != #{current_user.id}")
     end
 
     render 'api/users/index'

@@ -8,10 +8,34 @@
 
 User.destroy_all
 
-  User.create!(username: "Dmitri Shostakovich", password: "starwars", gender: "Male", sexuality: "Bisexual", age: 23, zipcode: 85718, min_age:19, max_age: 28)
-  User.create!(username: "Clara Schumann", password: "starwars", gender: "Female", sexuality: "Bisexual", age: 23, zipcode: 11215, min_age:19, max_age: 28)
+  genders = ["Man", "Woman"]
+  sexualities = ["Gay", "Straight", "Bisexual"]
+  ages = (18..35).to_a
+  zipcodes = [11215, 10001, 85718, 85704, 10102, 10203, 10466]
+
+  10.times do
+    name = Faker::Name.unique.name
+    gender = genders.sample
+    sexuality = sexualities.sample
+    age = ages.sample
+    zipcode = zipcodes.sample
+
+    User.create!(username: name, password: "starwars", gender: gender,
+      sexuality: sexuality, age: age, zipcode: zipcode, min_age: 18,
+      max_age: 99, image: "http://lorempixel.com/200/200/people")
+  end
+
 
 PersonalityQuestion.destroy_all
+PersonalityQuestionAnswer.destroy_all
 
-PersonalityQuestion.create!(title: "Do you think it is important to be fluent in more than one language?")
-PersonalityQuestion.create!(title: "Imagine you are having sex with a partner, who begins to give you specific instructions on how to best provide satisfaction. Assuming there is no danger, would you follow these instructions?")
+  10.times do
+    random_question = Faker::Lorem.sentence
+    question = PersonalityQuestion.create!(title: random_question)
+
+    (2..4).to_a.sample.times do
+      answer = Faker::Lorem.word
+
+      PersonalityQuestionAnswer.create!(question_id: question.id, answer: answer)
+    end
+  end
