@@ -4,8 +4,7 @@ import {connect} from 'react-redux';
 import { fetchThreads } from '../../actions/thread_actions';
 
 const mapStateToProps = ({threads}) => {
-  const arrayOfThreads = Object.keys(threads).map(id => threads[id]);
-  return {threads: arrayOfThreads}
+  return {threads}
 };
 
 const mapDispatchToProps = (dispatch) => {

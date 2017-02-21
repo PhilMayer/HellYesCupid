@@ -5,11 +5,12 @@ import {Route, Router, IndexRoute, hashHistory} from 'react-router';
 import App from './app'
 import Profile from './profile/profile';
 import SignUp from './signup_signin/sign_up';
+import ChatContainer from './chat/chat_container';
+import ThreadsContainer from './threads/threads_container';
 import ProfileContainer from './profile/profile_container';
 import MatchesContainer from './matches/matches_container';
 import QuestionContainer from './questions/questions_container';
 import SessionFormContainer from './signup_signin/session_form_container';
-import ThreadsContainer from './threads/threads_container';
 
 const Root = ({store}) => {
 
@@ -30,6 +31,7 @@ const Root = ({store}) => {
           <Route path="/matches" component={ MatchesContainer } />
           <Route path="/questions" component={ QuestionContainer } />
           <Route path="/profile/:id" component={ Profile } />
+          <Route path="/threads/:id" component={ ChatContainer } />
         </Route>
       </Router>
     </Provider>

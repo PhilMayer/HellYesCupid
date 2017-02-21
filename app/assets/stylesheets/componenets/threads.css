@@ -1,0 +1,40 @@
+.thread {
+  width: 550px;
+  margin: 30px 0px 5px 30px;
+  border: 1px solid black;
+  position: relative;
+  border-radius: 3px;
+  cursor: pointer;
+  /*font-family: 'Open Sans', sans-serif;*/
+}
+
+.thread img {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  margin: 15px 0px 15px 27px;
+}
+
+.thread-username {
+  position: absolute;
+  top: 20px;
+  left: 90px;
+  font-weight: bold;
+  color: #474d59;
+}
+
+.last-message {
+  position: absolute;
+  font-size: 12px;
+  color: #949aa6;
+}
+
+.preview {
+  top: 44px;
+  left: 90px;
+}
+
+.date {
+  right: 25px;
+  top: 33px;
+}

@@ -53,9 +53,9 @@ export default class MatchesHeader extends React.Component {
     };
   }
 
-  changeDistance () {
-
-  }
+  // changeDistance () {
+  //
+  // }
 
   render () {
     const matchGender = this.getGender();
@@ -65,15 +65,17 @@ export default class MatchesHeader extends React.Component {
         <span>{matchGender}</span>
 
         <span
-          className='dotted-underline'
+          className='age-preference'
           onClick={() => this.setState({editAge: !this.state.editAge})}>
           between the ages of {this.state.minAge} and {this.state.maxAge + " "}
+
+          {this.changeAgeRange()}
         </span>
 
         <span>located within {this.state.distance} miles of</span>
         <span>{" " + this.props.currentUser.zipcode}</span>
 
-        {this.changeAgeRange()}
+
       </div>
     );
   }

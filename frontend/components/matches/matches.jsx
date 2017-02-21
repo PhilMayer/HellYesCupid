@@ -38,7 +38,7 @@ export default class Matches extends React.Component {
     if(this.props.matches) {
       matches = this.props.matches.map((match, idx) => {
         return(
-          <SingleMatch key={idx} match={match}/>
+          <SingleMatch idx={idx} match={match}/>
         );
       });
     }
@@ -48,9 +48,9 @@ export default class Matches extends React.Component {
         <MatchesHeader
           currentUser={this.props.currentUser}
           fetchMatches = {this.props.fetchMatches}/>
-        <section className="matches">
+        <ul className="matches">
           {matches}
-        </section>
+        </ul>
       </div>
     );
   }

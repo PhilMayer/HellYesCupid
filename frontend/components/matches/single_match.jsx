@@ -8,7 +8,7 @@ export default class SingleMatch extends React.Component {
 
   render () {
     return(
-      <div className="match">
+      <li className="match" key={this.props.idx}>
         <img src={this.props.match.image}
           onClick={() => hashHistory.push(`/profile/${this.props.match.id}`)}/>
 
@@ -26,7 +26,7 @@ export default class SingleMatch extends React.Component {
 
         <p>88%</p>
         <p>Match</p>
-      </div>
+      </li>
     );
   }
 }
