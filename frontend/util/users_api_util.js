@@ -1,11 +1,4 @@
 export const fetchUsers = (params) => {
-  // let updateParams = params;
-  // if(!updateParams) {
-  //   updateParams = {};
-  // } else {
-  //   updateParams = {user: params};
-  // }
-
   return $.ajax({
     method: "GET",
     url: "api/users",

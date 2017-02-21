@@ -6,4 +6,12 @@ class Conversation < ApplicationRecord
     foreign_key: :thread_id,
     class_name: "Message"
   )
+
+  belongs_to :lover_one,
+    class_name: "User",
+    foreign_key: :lover_one_id
+
+  belongs_to :lover_two,
+    class_name: "User",
+    foreign_key: :lover_two_id
 end

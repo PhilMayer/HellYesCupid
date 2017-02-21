@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import {signup, login, logout} from './actions/session_actions';
 import configureStore from './store/store.js';
 import Root from './components/root';
-import {fetchMatches} from './actions/user_actions';
+import {fetchThreads} from './actions/thread_actions';
 
-window.fetchMatches = fetchMatches;
+window.fetchThreads = fetchThreads;
 
 document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('root');

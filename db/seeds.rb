@@ -14,15 +14,30 @@ User.destroy_all
   zipcodes = [11215, 10001, 85718, 85704, 10102, 10203, 10466]
 
   10.times do
-    name = Faker::Name.unique.name
-    gender = genders.sample
-    sexuality = sexualities.sample
+    name1 = Faker::Name.unique.name
+    name2 = Faker::Name.unique.name
+    gender1 = genders.sample
+    gender2 = genders.sample
+    sexuality1 = sexualities.sample
+    sexuality2 = sexualities.sample
     age = ages.sample
     zipcode = zipcodes.sample
 
-    User.create!(username: name, password: "starwars", gender: gender,
-      sexuality: sexuality, age: age, zipcode: zipcode, min_age: 18,
+    person1 = User.create!(username: name1, password: "starwars", gender: gender1,
+      sexuality: sexuality1, age: age, zipcode: zipcode, min_age: 18,
       max_age: 99, image: "http://lorempixel.com/200/200/people")
+
+    person2 = User.create!(username: name2, password: "starwars", gender: gender2,
+      sexuality: sexuality2, age: age, zipcode: zipcode, min_age: 18,
+      max_age: 99, image: "http://lorempixel.com/200/200/people")
+
+    thread = Conversation.create!(lover_one_id: person1.id, lover_two_id: person2.id)
+
+    couple = [person1, person2]
+    20.times do
+      Message.create!(author_id: couple.sample.id, thread_id: thread.id, body: Faker::Lorem.paragraph(1, true, 4))
+    end
+
   end
 
 

@@ -9,6 +9,7 @@ import ProfileContainer from './profile/profile_container';
 import MatchesContainer from './matches/matches_container';
 import QuestionContainer from './questions/questions_container';
 import SessionFormContainer from './signup_signin/session_form_container';
+import ThreadsContainer from './threads/threads_container';
 
 const Root = ({store}) => {
 
@@ -25,9 +26,10 @@ const Root = ({store}) => {
           <IndexRoute component={ SignUp } />
           <Route path="/signup" component={ SignUp } />
           <Route path="/login" component={ SessionFormContainer } />
+          <Route path="/threads" component={ ThreadsContainer } />
           <Route path="/matches" component={ MatchesContainer } />
-          <Route path="/questions" component={QuestionContainer} />
-          <Route path="/profile/:id" component={Profile} />
+          <Route path="/questions" component={ QuestionContainer } />
+          <Route path="/profile/:id" component={ Profile } />
         </Route>
       </Router>
     </Provider>
