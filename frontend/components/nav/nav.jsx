@@ -9,7 +9,7 @@ const Nav = (props) => {
         <button onClick={() => props.logout().then(hashHistory.push('/login'))}>Logout</button>
       </div>
     );
-  } else if (props.location.pathname === "/signup"){
+  } else if (props.location.pathname === "/signup" || props.location.pathname === "/"){
     return (
       <div className="nav boobies">
         <span>Have an account?</span>

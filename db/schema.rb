@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170217141708) do
+ActiveRecord::Schema.define(version: 20170221011132) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "lover_one_id", null: false
+    t.integer  "lover_two_id", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["lover_one_id"], name: "index_conversations_on_lover_one_id", using: :btree
+    t.index ["lover_two_id"], name: "index_conversations_on_lover_two_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.integer  "author_id"
+    t.integer  "thread_id"
+    t.text     "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_messages_on_author_id", using: :btree
+    t.index ["thread_id"], name: "index_messages_on_thread_id", using: :btree
+  end
 
   create_table "personality_question_answers", force: :cascade do |t|
     t.integer  "question_id", null: false

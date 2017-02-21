@@ -67,11 +67,11 @@ export default class MatchesHeader extends React.Component {
         <span
           className='dotted-underline'
           onClick={() => this.setState({editAge: !this.state.editAge})}>
-          between the ages of {this.state.minAge} and {this.state.maxAge}
+          between the ages of {this.state.minAge} and {this.state.maxAge + " "}
         </span>
 
-        <span>located within {this.state.distance} miles</span>
-        <span>of {this.props.currentUser.zipcode}</span>
+        <span>located within {this.state.distance} miles of</span>
+        <span>{" " + this.props.currentUser.zipcode}</span>
 
         {this.changeAgeRange()}
       </div>

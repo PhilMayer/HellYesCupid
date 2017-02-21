@@ -8,8 +8,6 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-
-
 .matches-header h3 {
   text-align: left;
 }
@@ -55,6 +53,7 @@
 
 .dotted-underline {
   border-bottom: 1px dotted lightblue;
+  cursor: pointer;
 }
 
 .to {

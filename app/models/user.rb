@@ -13,6 +13,18 @@ class User < ActiveRecord::Base
   class_name: "UserQuestionResponse"
  )
 
+ has_many(
+  :messages,
+  foreign_key: :author_id,
+  class_name: "Message"
+ )
+
+ has_many(
+  :threads,
+  through: :messages,
+  source: :thread
+ )
+
  has_attached_file :image, default_url: "test.png"
  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
