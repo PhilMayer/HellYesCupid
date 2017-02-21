@@ -7,12 +7,18 @@ export default class SingleMessage extends React.Component {
   }
 
   render () {
-    const {message, ownName, ownThumb, loverName, loverThumb} = this.props;
+    const {message, ownId, ownThumb, loverId, loverThumb} = this.props;
+    const ownMessage = (message.author_id === ownId);
+    const thumb = ownMessage ? ownThumb : loverThumb;
 
-    let thumb;
-    let name;
     return (
-      <h1>{this.props.message.body}</h1>
+      <li>
+        <img src={thumb}/>
+        <p className={ownMessage ? "message-body blue" : "message-body"}>
+          {message.body}
+          <span className={ownMessage ? "pointy-thing blue-pointy" : "pointy-thing"}></span>
+        </p>
+      </li>
     );
   }
 }

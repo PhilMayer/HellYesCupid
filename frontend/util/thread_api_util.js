@@ -11,3 +11,11 @@ export const fetchThread = (id) => {
     url: `api/threads/${id}`
   });
 };
+
+export const createMessage = (message) => {
+  return $.ajax({
+    method: "POST",
+    url: "api/messages",
+    data: {message}
+  });
+};

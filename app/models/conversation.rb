@@ -3,6 +3,7 @@ class Conversation < ApplicationRecord
 
   has_many(
     :messages,
+    -> {order(created_at: :asc)},
     foreign_key: :thread_id,
     class_name: "Message"
   )
