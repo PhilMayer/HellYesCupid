@@ -66,3 +66,8 @@
   font-weight: 400;
   color: #9dbaf2;
 }
+
+.message-button {
+  margin: 0px 0px 27px 500px;
+  border-radius: 6px;
+}

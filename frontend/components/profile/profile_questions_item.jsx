@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 class ProfileQuestionsItem extends React.Component {
   constructor(props) {
     super(props);
-    const isOwnProfile = (this.props.currentUser === parseInt(this.props.router.params.id));
+    const isOwnProfile = (this.props.id === parseInt(this.props.router.params.id));
 
     this.state = {
       editing: false,
@@ -21,8 +21,11 @@ class ProfileQuestionsItem extends React.Component {
     const updatedQuestion = this.state.responseText;
     const formData = new FormData();
     formData.append(`user[${this.props.question}]`, this.state.responseText);
-
-    this.props.updateUser(this.props.id, formData).then(this.setState({editing: false}));
+    const id = this.props.id;
+    const question = this.props.question;
+    const response = this.state.responseText;
+    this.props.updateUser({id, question: response}).then(this.setState({editing: false}));
+    // this.props.updateUser(this.props.id, formData).then(this.setState({editing: false}));
   }
 
   questionText() {

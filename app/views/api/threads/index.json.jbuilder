@@ -3,9 +3,10 @@
     json.extract! thread, :lover_one_id, :lover_two_id
 
     last_message = thread.messages.last
-
-    json.lastMessage last_message.body
-    json.lastMessageDate last_message.created_at.strftime("%B %d")
+    if last_message
+      json.lastMessage last_message.body
+      json.lastMessageDate last_message.created_at.strftime("%B %d")
+    end
 
     json.partial! "api/threads/thread", thread: thread
     # if current_user.id == thread.lover_one_id

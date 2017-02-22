@@ -11,6 +11,7 @@ import ProfileContainer from './profile/profile_container';
 import MatchesContainer from './matches/matches_container';
 import QuestionContainer from './questions/questions_container';
 import SessionFormContainer from './signup_signin/session_form_container';
+import ProfileQuestionsContainer from './profile/profile_questions_container';
 
 const Root = ({store}) => {
 
@@ -19,6 +20,7 @@ const Root = ({store}) => {
      replace('/')
    }
  }
+ // <Route path="/profile/:id/questions" component={ ProfileQuestionsContainer }/>
 
   return (
     <Provider store={ store }>
@@ -27,11 +29,12 @@ const Root = ({store}) => {
           <IndexRoute component={ SignUp } />
           <Route path="/signup" component={ SignUp } />
           <Route path="/login" component={ SessionFormContainer } />
-          <Route path="/threads" component={ ThreadsContainer } />
           <Route path="/matches" component={ MatchesContainer } />
           <Route path="/questions" component={ QuestionContainer } />
-          <Route path="/profile/:id" component={ Profile } />
-          <Route path="/threads/:id" component={ ChatContainer } />
+          <Route path="/profile/:id" component={ Profile }>
+            <Route path="/profile/:id/threads" component={ ThreadsContainer } />
+            <Route path="/profile/:id/threads/:id" component={ ChatContainer } />
+          </Route>
         </Route>
       </Router>
     </Provider>

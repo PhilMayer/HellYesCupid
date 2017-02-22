@@ -1,3 +1,11 @@
+.blue-background {
+  width:auto;
+  height:auto;
+  background-color: #104da1;
+  margin: auto;
+  padding: 1px 0px;
+}
+
 .chat {
   width: 900px;
   padding: 25px 0px 0px 25px;
@@ -59,6 +67,15 @@
   margin: 25px 0px 0px 147px;
   border: 1px solid lightgray;
 }
+
+.new-message img {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  margin: 15px 0px 15px 27px;
+  float: left;
+}
+
 
 .chat button {
   margin-left: 148px;

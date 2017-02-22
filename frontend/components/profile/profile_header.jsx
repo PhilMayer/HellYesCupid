@@ -17,6 +17,20 @@ class ProfileHeader extends React.Component {
     this.props.fetchUser(this.state.id);
   }
 
+  createChat () {
+    const id1 = this.props.ownId;
+    const id2 = this.props.id;
+
+    this.props.createChat({lover_one_id: id1, lover_two_id: id2})
+      .then((chat) => this.props.router.push(`threads/${chat.thread.id}`));
+  }
+
+  handleSubmit () {
+    var formData = new FormData();
+    formData.append("user[image]", this.state.imageFile);
+    this.props.updateUser(this.state.id, formData);
+  }
+
   updateFile (e) {
     // var reader = new FileReader();
     var file = e.currentTarget.files[0];
@@ -30,13 +44,6 @@ class ProfileHeader extends React.Component {
     //   this.setState({ imageUrl: "", imageFile: null });
     // }
   }
-
-  handleSubmit () {
-    var formData = new FormData();
-    formData.append("user[image]", this.state.imageFile);
-    this.props.updateUser(this.state.id, formData);
-  }
-
   // onMouseOver={() => this.setState({add: true})}
   // onMouseLeave={() => this.setState({add: false})}
   render() {
@@ -45,12 +52,16 @@ class ProfileHeader extends React.Component {
         <div className="profile-header-inner">
           <img
             src={this.props.profile_pic} />
+
           <button
             onClick={() => this.fileInput.click()}
-            className={this.state.add ? "" : ""}>
+            className={this.props.ownProfile ? "" : "hidden"}>
             Change
           </button>
-          <input type="file" onChange={this.updateFile} ref={input => this.fileInput = input} />
+
+          <input type="file"
+            onChange={this.updateFile}
+            ref={input => this.fileInput = input} />
 
           <div className="profile-header-info">
             <div>{this.props.username}</div>
@@ -58,6 +69,13 @@ class ProfileHeader extends React.Component {
             <span className="dot">•</span>
             <span className="sub-info">Manhattan, NY</span>
           </div>
+
+          <button
+            onClick={() => this.createChat()}
+            className={this.props.ownProfile ? "hidden" : "message-button"}>
+            Message
+          </button>
+
         </div>
       </div>
     );

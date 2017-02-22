@@ -29,9 +29,12 @@ export default class Chat extends React.Component {
       .then(() => this.props.fetchThread(this.props.id))
         .then(this.setState({newMessage: ""}));
   }
+
   writeNewMessage () {
     return(
       <div className="new-message-area">
+        <img src={this.props.currentUser.image}/>
+        
         <textarea
           className="new-message"
           value={this.state.newMessage}
@@ -57,16 +60,17 @@ export default class Chat extends React.Component {
       styledMessages = messages.map(message => (
         <SingleMessageContainer
           message={message}
-          currentUser={this.props.currentUser}
-          />
+          currentUser={this.props.currentUser}/>
       ));
     }
 
     return (
+      <div className="blue-background">
         <ul className="chat">
           {styledMessages}
           <li>{this.writeNewMessage()}</li>
         </ul>
+      </div>
     );
   }
 }

@@ -8,6 +8,7 @@ class Profile extends React.Component {
       <div>
         <ProfileHeaderContainer/>
         <ProfileQuestionsContainer />
+        {this.props.children}
       </div>
     );
   }

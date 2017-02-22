@@ -13,7 +13,7 @@ export default class Matches extends React.Component {
       <li
         className="thread"
         key={this.props.idx}
-        onClick={hashHistory.push(`threads/${this.props.id}`)}>
+        onClick={() => hashHistory.push(`threads/${this.props.id}`)}>
 
         <img src={this.props.thread.thumb} />
         <span className="thread-username">{thread.lover}</span>

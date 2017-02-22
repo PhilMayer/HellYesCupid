@@ -12,6 +12,14 @@ export const fetchThread = (id) => {
   });
 };
 
+export const createThread = (thread) => {
+  return $.ajax({
+    method: "POST",
+    url: "api/threads",
+    data: {thread}
+  });
+};
+
 export const createMessage = (message) => {
   return $.ajax({
     method: "POST",

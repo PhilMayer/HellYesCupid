@@ -9,10 +9,9 @@ const ProfileQuestions = (props) => {
     <li key={idx}>
       <ProfileQuestionsItem
         question={question}
-        profileId={props.id}
         response={props[question]}
         updateUser={props.updateUser}
-        currentUser={props.currentUser}
+        id={props.currentUser}
         />
     </li>
     )
