@@ -48,29 +48,38 @@ export default class MatchesHeader extends React.Component {
     return () => {
       this.props.fetchMatches({
         min_age: this.state.minAge,
-        max_age: this.state.maxAge
+        max_age: this.state.maxAge,
+        distance: this.state.distance
       });
+      // .then(() => setTimeout(() => this.setState({editAge: false}), 1000));
     };
   }
 
-  // changeDistance () {
-  //
-  // }
+  openAgeSearch (e) {
+    e.stopPropagation();
+    this.setState({editAge: !this.state.editAge});
+  }
 
   render () {
     const matchGender = this.getGender();
 
     return(
-      <div className="matches-header">
+      <div
+        className="matches-header"
+        onClick={() => this.setState({editAge: false})}>
+
         <span>{matchGender}</span>
 
-        <span
-          className='age-preference'
-          onClick={() => this.setState({editAge: !this.state.editAge})}>
-          between the ages of {this.state.minAge} and {this.state.maxAge + " "}
+        <span className="age-box">
+          <span
+            className='age-preference'
+            onClick={(e) => this.openAgeSearch(e)}>
+            between the ages of {this.state.minAge} and {this.state.maxAge + " "}
+          </span>
 
           {this.changeAgeRange()}
         </span>
+
 
         <span>located within {this.state.distance} miles of</span>
         <span>{" " + this.props.currentUser.zipcode}</span>

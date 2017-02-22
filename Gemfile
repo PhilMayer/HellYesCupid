@@ -35,6 +35,7 @@ gem 'figaro'
 gem 'aws-sdk', '>= 2.0'
 gem 'faker'
 gem 'geocoder'
+gem 'geokit-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -45,7 +46,7 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'annotate'
-  
+
 end
 
 group :development do

@@ -4,7 +4,6 @@ import ProfileQuestionsItem from './profile_questions_item';
 const ProfileQuestions = (props) => {
   let questions = Object.keys(props);
   questions = questions.slice(1, -1);
-
   questions = questions.map((question, idx) => (
     <li key={idx}>
       <ProfileQuestionsItem

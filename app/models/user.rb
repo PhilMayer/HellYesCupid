@@ -7,6 +7,10 @@ class User < ActiveRecord::Base
  validates :password, length: {minimum: 6, allow_nil: true}
  after_initialize :ensure_session_token
 
+geocoded_by :zipcode   # can also be an IP address
+after_validation :geocode, if: ->(obj){ obj.zipcode.present? and obj.zipcode_changed? }
+acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
+
  has_many(
   :question_responses,
   foreign_key: :user_id,

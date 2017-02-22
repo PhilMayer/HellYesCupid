@@ -10,19 +10,31 @@ class Api::UsersController < ApplicationController
   end
 
   def index
+    # User.within(4000, :origin => u)
+    distance = 10
+    min_age = current_user.min_age
+    max_age = current_user.max_age
+    
     if params[:user]
       min_age = params[:user][:min_age].to_i
       max_age = params[:user][:max_age].to_i
+      distance = params[:user][:distance].to_i
       current_user.update!(min_age: min_age, max_age: max_age)
-    else
-      min_age = current_user.min_age
-      max_age = current_user.max_age
+    # else
+    #   min_age = current_user.min_age
+    #   max_age = current_user.max_age
     end
 
-    # @matches = User.where("age >= #{min_age} and age <= #{max_age}")
+    # distance = distance || 10
     @matches = User.where(:age => (min_age)..(max_age))
       .where.not(:id => current_user.id)
       .where(:gender => current_user.preference)
+      .within(distance, :origin => current_user)
+
+    # if params[:user][:distance]
+    #   distance = params[:user][:distance].to_i
+    #   @matches = @matches.within(distance, :origin => current_user)
+    # end
 
     render 'api/users/index'
   end
@@ -38,7 +50,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:user][:id])
+    @user = User.find(params[:id])
 
     if @user.update(user_params)
       render 'api/users/show'

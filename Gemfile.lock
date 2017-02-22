@@ -80,6 +80,10 @@ GEM
     figaro (1.1.1)
       thor (~> 0.14)
     geocoder (1.4.3)
+    geokit (1.10.0)
+    geokit-rails (2.2.0)
+      geokit (~> 1.5)
+      rails (>= 3.0)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     i18n (0.8.0)
@@ -208,6 +212,7 @@ DEPENDENCIES
   faker
   figaro
   geocoder
+  geokit-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

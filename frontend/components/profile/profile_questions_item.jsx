@@ -20,11 +20,11 @@ class ProfileQuestionsItem extends React.Component {
   handleSubmit () {
     const updatedQuestion = this.state.responseText;
     const formData = new FormData();
-    formData.append(`user[${this.props.question}]`, this.state.responseText);
+    formData.append(`user[${this.props.question}]`, updatedQuestion);
     const id = this.props.id;
-    const question = this.props.question;
-    const response = this.state.responseText;
-    this.props.updateUser({id, question: response}).then(this.setState({editing: false}));
+    // const question = this.props.question;
+    // const response = this.state.responseText;
+    this.props.updateUser(id, formData).then(this.setState({editing: false}));
     // this.props.updateUser(this.props.id, formData).then(this.setState({editing: false}));
   }
 
@@ -52,7 +52,6 @@ class ProfileQuestionsItem extends React.Component {
   }
 
   render() {
-
     let submittedText = "";
     if(this.state.responseText && !this.state.editing) {
       submittedText = this.props.response;

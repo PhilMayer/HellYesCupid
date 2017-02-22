@@ -18,6 +18,10 @@
   cursor: pointer;
 }
 
+.age-box {
+  position: relative;
+}
+
 .change-age-range {
   position: absolute;
   right: 0px;
