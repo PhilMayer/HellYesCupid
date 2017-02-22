@@ -34,7 +34,7 @@ class Profile extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="profile">
         <ProfileHeaderContainer/>
         {this.profileNav()}
         {this.props.children}

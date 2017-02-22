@@ -1,11 +1,14 @@
 .thread {
   width: 550px;
+  padding: 1px;
   /*margin: 30px 0px 5px 30px;*/
   margin-left: 32.4%;
-  border: 1px solid black;
+  margin-bottom: 7px;
+  /*border: 1px solid black;*/
   position: relative;
   border-radius: 3px;
   cursor: pointer;
+  background: white;
   /*font-family: 'Open Sans', sans-serif;*/
 }
 

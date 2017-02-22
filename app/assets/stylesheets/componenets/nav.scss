@@ -13,6 +13,28 @@
 
 .nav h2 {
   padding-top: 21px;
+  margin-left: 125px;
+  cursor: pointer;
+}
+
+#chat-and-thumb {
+  margin-left:auto;
+  display: flex;
+}
+
+.fa-comment-o:before {
+  margin-right: 22px;
+  color: #9dbaf2;
+}
+
+.nav-thumb {
+  width: 51px;
+  height: 51px;
+  border-radius: 50%;
+  // margin-left: auto;
+  margin-right: -22px;
+  margin-top: -16px;
+  cursor: pointer;
 }
 
 .nav button {

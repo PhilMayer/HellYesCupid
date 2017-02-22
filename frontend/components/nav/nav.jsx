@@ -5,8 +5,20 @@ const Nav = (props) => {
   if(props.currentUser) {
     return (
       <div className="nav">
-        <h2>Browse Matches</h2>
-        <button onClick={() => props.logout().then(hashHistory.push('/login'))}>Logout</button>
+        <h2 onClick={() => hashHistory.push("/matches")}>Browse Matches</h2>
+
+        <div id="chat-and-thumb">
+          <i
+            onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
+            className="fa fa-comment-o fa-2x" aria-hidden="true">
+          </i>
+          <img
+            className="nav-thumb"
+            src={props.currentUser.image_url}
+            onClick={() => hashHistory.push(`/profile/${props.currentUser.id}`)}/>
+        </div>
+
+        <button onClick={() => props.logout().then(hashHistory.push("/login"))}>Logout</button>
       </div>
     );
   } else if (props.location.pathname === "/signup" || props.location.pathname === "/"){

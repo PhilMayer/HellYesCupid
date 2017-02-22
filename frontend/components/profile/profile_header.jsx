@@ -22,7 +22,7 @@ class ProfileHeader extends React.Component {
     const id2 = this.props.id;
 
     this.props.createChat({lover_one_id: id1, lover_two_id: id2})
-      .then((chat) => this.props.router.push(`threads/${chat.thread.id}`));
+      .then((chat) => this.props.router.push(`profile/${id1}/threads/${chat.thread.id}`));
   }
 
   handleSubmit () {
@@ -44,7 +44,7 @@ class ProfileHeader extends React.Component {
     //   this.setState({ imageUrl: "", imageFile: null });
     // }
   }
-  
+
   render() {
     return (
       <div className="profile-header-outer">
