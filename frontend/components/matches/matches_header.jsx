@@ -77,9 +77,7 @@ export default class MatchesHeader extends React.Component {
     const matchGender = this.getGender();
 
     return(
-      <div
-        className="matches-header"
-        onClick={() => this.setState({editAge: false})}>
+      <div className="matches-header">
 
         <span>{matchGender}</span>
 

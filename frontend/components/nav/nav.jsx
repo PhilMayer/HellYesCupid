@@ -16,11 +16,10 @@ const Nav = (props) => {
         <div>
           <Link to='/login'>Sign in</Link>
 
-          <button onClick={() => this.props.login({
+          <button onClick={() => props.login({
               username: "findingDemo",
               password: "starwars"
-            }
-          )}>
+            }).then(() => hashHistory.push("/matches"))}>
             Demo Login
           </button>
         </div>

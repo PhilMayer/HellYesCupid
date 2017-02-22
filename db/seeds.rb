@@ -7,6 +7,8 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Conversation.destroy_all
+Message.destroy_all
 
   User.create!(username: "findingDemo", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 34, zipcode: 11215, min_age: 18,
