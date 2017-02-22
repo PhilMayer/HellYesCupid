@@ -8,6 +8,10 @@
 
 User.destroy_all
 
+  User.create!(username: "findingDemo", password: "starwars", gender: "Man",
+    sexuality: "Bisexual", age: 34, zipcode: 11215, min_age: 18,
+    max_age: 99, image: "http://vignette3.wikia.nocookie.net/pixar/images/2/23/Nemo-finding-nemo-wallpapers-9-0-s-307x512-1.jpg")
+
   genders = ["Man", "Woman"]
   sexualities = ["Gay", "Straight", "Bisexual"]
   ages = (18..35).to_a

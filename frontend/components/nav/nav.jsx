@@ -15,6 +15,14 @@ const Nav = (props) => {
         <span>Have an account?</span>
         <div>
           <Link to='/login'>Sign in</Link>
+
+          <button onClick={() => this.props.login({
+              username: "findingDemo",
+              password: "starwars"
+            }
+          )}>
+            Demo Login
+          </button>
         </div>
       </div>
     );

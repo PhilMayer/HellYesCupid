@@ -9,6 +9,10 @@
   /*font-family: 'Open Sans', sans-serif;*/
 }
 
+.thread:first-child{
+  margin-top: 30px;
+}
+
 .thread img {
   width: 51px;
   height: 51px;
