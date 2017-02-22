@@ -1,19 +1,20 @@
 import React from 'react';
-import {hashHistory} from 'react-router';
+import {withRouter} from 'react-router';
 
-export default class Matches extends React.Component {
+class SingleThread extends React.Component {
   constructor(props) {
     super(props);
   }
 
   render () {
     const thread = this.props.thread;
+    const id = this.props.params.id;
 
     return(
       <li
         className="thread"
         key={this.props.idx}
-        onClick={() => hashHistory.push(`threads/${this.props.id}`)}>
+        onClick={() => this.props.router.push(`profile/${id}/threads/${this.props.id}`)}>
 
         <img src={this.props.thread.thumb} />
         <span className="thread-username">{thread.lover}</span>
@@ -24,3 +25,5 @@ export default class Matches extends React.Component {
     );
   }
 }
+
+export default withRouter(SingleThread);

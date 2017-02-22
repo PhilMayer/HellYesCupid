@@ -20,7 +20,6 @@ const Root = ({store}) => {
      replace('/')
    }
  }
- // <Route path="/profile/:id/questions" component={ ProfileQuestionsContainer }/>
 
   return (
     <Provider store={ store }>
@@ -32,8 +31,10 @@ const Root = ({store}) => {
           <Route path="/matches" component={ MatchesContainer } />
           <Route path="/questions" component={ QuestionContainer } />
           <Route path="/profile/:id" component={ Profile }>
+            <IndexRoute component={ProfileQuestionsContainer} />
             <Route path="/profile/:id/threads" component={ ThreadsContainer } />
             <Route path="/profile/:id/threads/:id" component={ ChatContainer } />
+            <Route path="/profile/:id/questions" component={ QuestionContainer }/>
           </Route>
         </Route>
       </Router>

@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import { fetchThread } from '../../actions/thread_actions';
 
 const mapStateToProps = ({session: {currentUser}, chat}, ownProps) => {
-  const id = ownProps.params.id;
+  const id = ownProps.params.id[1];
   return {
     id,
     chat,

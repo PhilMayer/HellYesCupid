@@ -9,7 +9,7 @@ const mapStateToProps = ({chat}, ownProps) => {
     loverThumb: chat.thumb,
     message: ownProps.message,
     ownId: ownProps.currentUser.id,
-    ownThumb: ownProps.currentUser.image
+    ownThumb: ownProps.currentUser.image_url
   };
 };
 

@@ -9,14 +9,14 @@ const mapStateToProps = ({session: {currentUser}, lover}) => {
   return {
     currentUser: currentUser.id,
     // id: lover.id,
-    summary: profile.summary,
+    questions: {summary: profile.summary,
     doing_with_life: profile.doing_with_life,
     really_good_at: profile.really_good_at,
     favorite_things: profile.favorite_things,
     six_things: profile.six_things,
     think_about: profile.think_about,
     typical_friday: profile.typical_friday,
-    message_me_if: profile.message_me_if
+    message_me_if: profile.message_me_if}
   };
 };
 

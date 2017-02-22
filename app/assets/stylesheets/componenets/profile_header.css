@@ -24,12 +24,12 @@
 
 .profile-header-inner button {
   position: absolute;
-  left: 94px;
-  bottom: 1px;
-  padding: 2px 44px;
+  left: 99px;
+  bottom: -2px;
+  padding: 2px 25px;
   background-color: #4c7bd9;
   color: white;
-  line-height: 41px;
+  line-height: 32px;
   font-size: 15px;
   white-space: nowrap;
   color: #fff;
