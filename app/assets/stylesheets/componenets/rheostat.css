@@ -3,7 +3,7 @@
   width: 160px;
   margin-left: 55.5%;
 
-  /*OR 
+  /*OR
   overflow: visible;
 width: 160px;
 margin-left: 55.5%;
@@ -11,6 +11,7 @@ height: 3px;
 border-bottom: 3px solid black;
 padding: 5px;
 }*/
+}
 
 .rheostat-background {
   background-color: #fcfcfc;
