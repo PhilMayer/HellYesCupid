@@ -14,7 +14,7 @@ class Api::UsersController < ApplicationController
     distance = 10
     min_age = current_user.min_age
     max_age = current_user.max_age
-    
+
     if params[:user]
       min_age = params[:user][:min_age].to_i
       max_age = params[:user][:max_age].to_i
@@ -50,6 +50,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
+  
     @user = User.find(params[:id])
 
     if @user.update(user_params)

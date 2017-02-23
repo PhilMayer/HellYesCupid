@@ -6,18 +6,24 @@ class SingleQuestion extends React.Component {
     super(props);
 
     let existingAnswer;
+    let acceptableAnswers;
+
     if(this.props.userResponses) {
       const mostRecentResponse = Object.keys(this.props.userResponses).pop();
       existingAnswer = this.props.userResponses[mostRecentResponse].answer_id;
+      acceptableAnswers = this.props.userResponses[mostRecentResponse].acceptable_answers;
     }
 
     this.state={
       editing: false,
-      updatedResponse: existingAnswer
+      updatedResponse: existingAnswer,
+      acceptableAnswers: acceptableAnswers,
+      weight: 1
     };
 
     this.handleClick = this.handleClick.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCheckboxChange = this.handleCheckboxChange.bind(this);
   }
 
   handleClick () {
@@ -30,11 +36,50 @@ class SingleQuestion extends React.Component {
 
   handleSubmit () {
     const userId = this.props.userId;
-    const response = this.state.updatedResponse;
+    const {updatedResponse, acceptableAnswers} = this.state;
 
-    submitResponse({user_id: userId, answer_id: response});
+    submitResponse({
+      user_id: userId,
+      answer_id: updatedResponse,
+      acceptable_answers: acceptableAnswers
+    });
 
     this.setState({editing: false});
+  }
+
+  handleCheckboxChange (e) {
+    let newAcceptableAnswers = this.state.acceptableAnswers;
+    const answer = e.target.value;
+
+    if (newAcceptableAnswers.includes(answer)) {
+      const idx = newAcceptableAnswers.indexOf(answer);
+      delete newAcceptableAnswers[idx];
+    } else {
+      newAcceptableAnswers.push(e.target.value);
+    }
+
+    this.setState({acceptableAnswers: newAcceptableAnswers});
+  }
+
+  getCheckbox (answer) {
+
+    if (this.state.acceptableAnswers.includes(answer.id.toString())) {
+      return <input defaultChecked={true} type="checkbox" value={answer.id} onClick={(e) => this.handleCheckboxChange(e)}/>;
+    } else {
+      return <input type="checkbox" value={answer.id} onClick={(e) => this.handleCheckboxChange(e)}/>;
+    }
+    // return this.state.acceptableAnswers.includes(value) ? "checked" : null;
+  }
+
+  getAcceptableAnswers () {
+    return this.props.question.answers.map(answer => {
+      return(
+        <label key={answer.id}>
+          {this.getCheckbox(answer)}
+        {answer.answer}
+        </label>
+      );
+    });
   }
 
   getRadioButtons () {
@@ -69,6 +114,7 @@ class SingleQuestion extends React.Component {
     });
 
     const radioAnswers = this.getRadioButtons();
+    const acceptableAnswers = this.getAcceptableAnswers();
 
     return (
       <li className="question">
@@ -87,6 +133,11 @@ class SingleQuestion extends React.Component {
 
         <div className={this.state.editing ? "" : "hidden"}>
           {radioAnswers}
+        </div>
+
+        <p>Answers you'll accept</p>
+        <div className={this.state.editing ? "" : "hidden"}>
+          {acceptableAnswers}
         </div>
 
         <button

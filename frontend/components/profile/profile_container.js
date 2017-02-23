@@ -1,11 +1,11 @@
 import React from 'react';
 import Profile from './profile';
 import {connect} from 'react-redux';
-import {fetchUser} from '../../actions/user_actions';
+// import {fetchUser} from '../../actions/user_actions';
 
-// const mapStateToProps = (state, ownProps) => {
-//   return {id: ownProps.params.id};
-// };
+const mapStateToProps = ({session: {currentUser}}) => {
+  return {ownId: currentUser.id};
+};
 //
 // const mapDispatchToProps = (dispatch) => {
 //   return {
@@ -13,4 +13,4 @@ import {fetchUser} from '../../actions/user_actions';
 //   };
 // };
 //
-// export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps)(Profile);

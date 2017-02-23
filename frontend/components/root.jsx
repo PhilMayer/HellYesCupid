@@ -31,7 +31,7 @@ const Root = ({store}) => {
           <Route path="/matches" component={ MatchesContainer } />
           <Route path="/questions" component={ QuestionContainer } />
           <Route path="/threads" component={ ThreadsContainer } />
-          <Route path="/profile/:id" component={ Profile }>
+          <Route path="/profile/:id" component={ ProfileContainer }>
             <IndexRoute component={ProfileQuestionsContainer} />
             <Route path="/profile/:id/threads" component={ ThreadsContainer } />
             <Route path="/profile/:id/threads/:id" component={ ChatContainer } />

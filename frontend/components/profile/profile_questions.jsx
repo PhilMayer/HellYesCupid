@@ -8,7 +8,7 @@ const ProfileQuestions = (props) => {
       <ProfileQuestionsItem
         question={question}
         id={props.currentUser}
-        response={props[question]}
+        response={props.questions[question]}
         updateUser={props.updateUser}
         />
     </li>

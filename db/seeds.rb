@@ -18,6 +18,7 @@ Message.destroy_all
   sexualities = ["Gay", "Straight", "Bisexual"]
   ages = (18..35).to_a
   zipcodes = [11215, 10001, 85718, 85704, 10102, 10203, 10466]
+  users = []
 
   10.times do
     name1 = Faker::Name.unique.name
@@ -33,9 +34,13 @@ Message.destroy_all
       sexuality: sexuality1, age: age, zipcode: zipcode, min_age: 18,
       max_age: 99, image: "http://lorempixel.com/200/200/people")
 
+    users.push(person1)
+
     person2 = User.create!(username: name2, password: "starwars", gender: gender2,
       sexuality: sexuality2, age: age, zipcode: zipcode, min_age: 18,
       max_age: 99, image: "http://lorempixel.com/200/200/people")
+
+    users.push(person2)
 
     thread = Conversation.create!(lover_one_id: person1.id, lover_two_id: person2.id)
 
@@ -49,6 +54,7 @@ Message.destroy_all
 
 PersonalityQuestion.destroy_all
 PersonalityQuestionAnswer.destroy_all
+UserQuestionResponse.destroy_all
 
   # 10.times do
   #   random_question = Faker::Lorem.sentence
@@ -77,9 +83,32 @@ questions = {"How many eggs did Marlin and Coral have?": ["250", "400", "700", "
   "When does Marlin first see Dory?": ["Right after Nemo gets taken", "On the first day of school", "At the Shark meeting", "During the Anglerfish encounter"]
   }
 
+  database_questions = []
+
     questions.keys.each do |question|
       q = PersonalityQuestion.create!(title: question)
+      database_questions.push(q)
       questions[question].each do |answer|
         PersonalityQuestionAnswer.create!(question_id: q.id, answer: answer)
       end
     end
+
+  users.each do |user|
+    database_questions.each do |question|
+      num_answers = question.answers.length
+      my_answer = (0..(num_answers - 1)).to_a.sample
+
+      question.answers.each_with_index do |answer, idx|
+        acceptable = [true, false].sample
+        will_accept = []
+        will_accept.push(answer.id) if acceptable
+
+        weight = [1, 10, 50, 100].sample
+
+        if idx == my_answer
+          will_accept.push(answer.id)
+          UserQuestionResponse.create!(user_id: user.id, answer_id: answer.id, acceptable_answers: will_accept, weight: weight)
+        end
+      end
+    end
+  end

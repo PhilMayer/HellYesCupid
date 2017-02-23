@@ -8,34 +8,36 @@ class Profile extends React.Component {
   profileNav () {
     const id = this.props.params.id;
     const location = this.props.location.pathname;
+    
+    if (parseInt(id) === this.props.ownId) {
+      return (
+        <div className="profile-nav">
+          <span
+            className={location === `/profile/${id}` ? "underline" : ""}
+            onClick={() => hashHistory.push(`profile/${id}`)}>
+            Profile
+          </span>
 
-    return (
-      <div className="profile-nav">
-        <span
-          className={location === `/profile/${id}` ? "underline" : ""}
-          onClick={() => hashHistory.push(`profile/${id}`)}>
-          Profile
-        </span>
+          <span
+            className={location === `/profile/${id}/threads` ? "underline" : ""}
+            onClick={() => hashHistory.push(`profile/${id}/threads`)}>
+            Chats
+          </span>
 
-        <span
-          className={location === `/profile/${id}/threads` ? "underline" : ""}
-          onClick={() => hashHistory.push(`profile/${id}/threads`)}>
-          Chats
-        </span>
-
-        <span
-          className={location === `/profile/${id}/questions` ? "underline" : ""}
-          onClick={() => hashHistory.push(`profile/${id}/questions`)}>
-          Questions
-        </span>
-      </div>
-    );
+          <span
+            className={location === `/profile/${id}/questions` ? "underline" : ""}
+            onClick={() => hashHistory.push(`profile/${id}/questions`)}>
+            Questions
+          </span>
+        </div>
+      );
+    }
   }
 
   render() {
     return (
       <div className="profile">
-        <ProfileHeaderContainer/>
+        <ProfileHeaderContainer userId={this.props.params.id}/>
         {this.profileNav()}
         {this.props.children}
       </div>

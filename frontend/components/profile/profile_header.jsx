@@ -7,14 +7,19 @@ class ProfileHeader extends React.Component {
     super(props);
     this.state = {
       changePic: false,
-      imageFile: null,
-      id: parseInt(this.props.router.params.id)
+      imageFile: null
     };
     this.updateFile = this.updateFile.bind(this);
   }
 
   componentDidMount () {
-    this.props.fetchUser(this.state.id);
+    this.props.fetchUser(this.props.userId);
+  }
+
+  componentWillReceiveProps (newProps) {
+    if (newProps.userId !== this.props.userId) {
+      this.props.fetchUser(newProps.userId);
+    }
   }
 
   createChat () {
@@ -28,7 +33,7 @@ class ProfileHeader extends React.Component {
   handleSubmit () {
     var formData = new FormData();
     formData.append("user[image]", this.state.imageFile);
-    this.props.updateUser(this.state.id, formData);
+    this.props.updateUser(this.props.userId, formData);
   }
 
   updateFile (e) {
@@ -46,11 +51,14 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
+
     return (
       <div className="profile-header-outer">
         <div className="profile-header-inner">
-          <div onMouseOver={() => this.setState({changePic: true})}
-              onMouseLeave={() => this.setState({changePic: false})}>
+          <div
+            className="image-holder"
+            onMouseOver={() => this.setState({changePic: true})}
+            onMouseLeave={() => this.setState({changePic: false})}>
             <img src={this.props.profile_pic} />
 
             <button
