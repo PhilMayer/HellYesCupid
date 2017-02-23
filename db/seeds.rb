@@ -50,13 +50,36 @@ Message.destroy_all
 PersonalityQuestion.destroy_all
 PersonalityQuestionAnswer.destroy_all
 
-  10.times do
-    random_question = Faker::Lorem.sentence
-    question = PersonalityQuestion.create!(title: random_question)
+  # 10.times do
+  #   random_question = Faker::Lorem.sentence
+  #   question = PersonalityQuestion.create!(title: random_question)
+  #
+  #   (2..4).to_a.sample.times do
+  #     answer = Faker::Lorem.word
+  #
+  #     PersonalityQuestionAnswer.create!(question_id: question.id, answer: answer)
+  #   end
+  # end
 
-    (2..4).to_a.sample.times do
-      answer = Faker::Lorem.word
 
-      PersonalityQuestionAnswer.create!(question_id: question.id, answer: answer)
+questions = {"How many eggs did Marlin and Coral have?": ["250", "400", "700", "1000"],
+  "What animal attacks Nemo's neighborhood at the beginning of the film?": ["Shark", "Eel", "Barracuda", "Anglerfish"],
+  "Which of Nemo's fins is the 'lucky' one?": ["Dorsal fin", "Right fin", "Left fin", "Caudal fin"],
+  "What color is the rim of scuba divers' goggles seen in the film?": ["Green", "Yellow", "Blue", "Red"],
+  "Who is the first one to speak to Nemo in the tank?": ["Peach", "Flo", "Bubbles", "Gill"],
+  "Do you consider yourself more of a Nemo, Dory, Destiny, or Sigourney Weaver?": ["Nemo!", "Dory!", "Destiny!", "Sigourney?"],
+  "Which Disney/Pixar character can be seen on the floor in the dentist's office?": ["Buzz Lightyear", "Mike Wazowski", "Rex", "WALL-E"],
+  "Which species of fish ISN'T in the tank gang?": ["Moorish Idol", "Royal Gramma", "Yellow Goatfish", "Black and White Humbug"],
+  "Dory refers to Nemo as all of these names but one. Which one doesn't belong?": ["Chico", "Fabio", "Meeko", "Elmo"],
+  "How many scars does Gill have?": ["1", "2", "3"],
+  "What type of shark is Anchor?": ["Great White Shark", "Hammerhead Shark", "Tiger Shark", "Mako Shark"],
+  "What does E.A.C. stand for?": ["East Australian Cove", "East Australian Current", "East Australian Cloud", "East Australian Curve"],
+  "When does Marlin first see Dory?": ["Right after Nemo gets taken", "On the first day of school", "At the Shark meeting", "During the Anglerfish encounter"]
+  }
+
+    questions.keys.each do |question|
+      q = PersonalityQuestion.create!(title: question)
+      questions[question].each do |answer|
+        PersonalityQuestionAnswer.create!(question_id: q.id, answer: answer)
+      end
     end
-  end

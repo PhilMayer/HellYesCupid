@@ -30,6 +30,7 @@ const Root = ({store}) => {
           <Route path="/login" component={ SessionFormContainer } />
           <Route path="/matches" component={ MatchesContainer } />
           <Route path="/questions" component={ QuestionContainer } />
+          <Route path="/threads" component={ ThreadsContainer } />
           <Route path="/profile/:id" component={ Profile }>
             <IndexRoute component={ProfileQuestionsContainer} />
             <Route path="/profile/:id/threads" component={ ThreadsContainer } />
