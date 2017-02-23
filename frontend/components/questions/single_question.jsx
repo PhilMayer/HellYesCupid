@@ -5,20 +5,24 @@ class SingleQuestion extends React.Component {
   constructor(props) {
     super(props);
 
+    let weight;
     let existingAnswer;
     let acceptableAnswers;
 
     if(this.props.userResponses) {
+      const responses = this.props.userResponses;
       const mostRecentResponse = Object.keys(this.props.userResponses).pop();
-      existingAnswer = this.props.userResponses[mostRecentResponse].answer_id;
-      acceptableAnswers = this.props.userResponses[mostRecentResponse].acceptable_answers;
+
+      weight = responses[mostRecentResponse].weight;
+      existingAnswer = responses[mostRecentResponse].answer_id;
+      acceptableAnswers = responses[mostRecentResponse].acceptable_answers;
     }
 
     this.state={
       editing: false,
+      weight: weight,
       updatedResponse: existingAnswer,
-      acceptableAnswers: acceptableAnswers,
-      weight: 1
+      acceptableAnswers: acceptableAnswers
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -121,7 +125,7 @@ class SingleQuestion extends React.Component {
             id={this.state.weight >= 50 ? "blue-weight" : ""}
             onClick={() => this.setState({weight: 50})}>
           </div>
-          <span>Somewhat</span>
+          <span id="weight-label-middle">Somewhat</span>
         </div>
 
         <div>
@@ -179,7 +183,7 @@ class SingleQuestion extends React.Component {
           {acceptableAnswers}
         </div>
 
-        <div className={this.state.editing ? "" : "hidden"}>
+        <div className={this.state.editing ? "weight-section" : "hidden"}>
           <p>Importance</p>
           {weights}
         </div>

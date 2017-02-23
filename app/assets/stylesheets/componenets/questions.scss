@@ -59,6 +59,10 @@
   margin-top: 17px;
 }
 
+.weight-section {
+  margin-top: 18px;
+}
+
 .weights {
   display: flex;
   align-items: baseline;
@@ -72,16 +76,16 @@
   border-radius: 2px;
 }
 
-.weight-block {
+.weights span {
   margin-left: 52px;
+}
+
+#weight-label-middle {
+  margin-left: 34px;
 }
 
 #blue-weight {
   background: #4c7bd9;
-}
-
-.weight-labels {
-  display: block;
 }
 
 // .hide-radios {

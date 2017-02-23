@@ -1,6 +1,5 @@
 class Api::UserQuestionResponsesController < ApplicationController
   def create
-
     @response = UserQuestionResponse.new(response_params)
     @user = @response.user
     # if @response.personality_question_answer.question_id == params[:question_id]

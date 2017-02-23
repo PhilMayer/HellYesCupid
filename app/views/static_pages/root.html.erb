@@ -4,8 +4,10 @@
   <% if logged_in? %>
   window.currentUser = <%= render('api/users/user.json.jbuilder', user: current_user).html_safe %>
   <% end %>
+  
   window.images = {
-    test: "<%=image_path("test.png")%>"
+    test: "<%= image_path("test.png") %>"
+    logo: "<%= image_path("HellYesCupid.png") %>"
   }
 </script>
 

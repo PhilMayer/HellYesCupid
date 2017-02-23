@@ -49,20 +49,32 @@ class Signup extends React.Component {
   part1 () {
     return(
       <div className="signup">
-        <h1>HellYesCupid</h1>
+        <img className="big-logo" src={window.images.logo}/>
+
         <h2>Join the second best free dating site on Earth.</h2>
             <span className="i-am-a">I am a </span>
 
-              <div className="signup-dropdown" onClick={() => this.setState({sexualityDrop: !this.state.sexualityDrop})}>{this.state.sexuality}<span className="arrow">▼</span>
-                <ul onClick={this.part1Update('sexuality')} className={this.state.sexualityDrop ? "" : "hidden"}>
+              <div className="signup-dropdown"
+
+                onClick={() => this.setState({sexualityDrop: !this.state.sexualityDrop})}>
+                {this.state.sexuality}
+                <span className="arrow">▼</span>
+
+                <ul onClick={this.part1Update('sexuality')}
+                  className={this.state.sexualityDrop ? "" : "hidden"}>
                   <li value="Straight">Straight</li>
                   <li value="Gay">Gay</li>
                   <li value="Bisexual">Bisexual</li>
                 </ul>
               </div>
 
-              <div className="signup-dropdown" onClick={() => this.setState({genderDrop: !this.state.genderDrop})}>{this.state.gender}<span className="arrow">▼</span>
-                <ul onClick={this.part1Update('gender')} className={this.state.genderDrop ? "" : "hidden"}>
+              <div className="signup-dropdown"
+                onClick={() => this.setState({genderDrop: !this.state.genderDrop})}>
+                {this.state.gender}
+                <span className="arrow">▼</span>
+
+                <ul onClick={this.part1Update('gender')}
+                  className={this.state.genderDrop ? "" : "hidden"}>
                   <li value="Woman">Woman</li>
                   <li value="Man">Man</li>
                 </ul>
