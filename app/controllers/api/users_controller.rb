@@ -26,10 +26,12 @@ class Api::UsersController < ApplicationController
     end
 
     # distance = distance || 10
-    @matches = User.where(:age => (min_age)..(max_age))
-      .where.not(:id => current_user.id)
-      .where(:gender => current_user.preference)
-      .within(distance, :origin => current_user)
+    # @matches = User.where(:age => (min_age)..(max_age))
+    #   .where.not(:id => current_user.id)
+    #   .where(:gender => current_user.preference)
+    #   .within(distance, :origin => current_user)
+
+    @matches = User.where("username != 'findingDemo'")
 
     # if params[:user][:distance]
     #   distance = params[:user][:distance].to_i
@@ -50,7 +52,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-  
+
     @user = User.find(params[:id])
 
     if @user.update(user_params)

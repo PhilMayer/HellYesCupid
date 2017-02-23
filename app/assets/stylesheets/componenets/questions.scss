@@ -55,6 +55,35 @@
   left: -25px;
 }
 
+.acceptable-answers {
+  margin-top: 17px;
+}
+
+.weights {
+  display: flex;
+  align-items: baseline;
+}
+.weight-block {
+  width: 143px;
+  height: 18px;
+  margin-bottom: 8px;
+  margin-left: 3px;
+  background: #ebedf2;
+  border-radius: 2px;
+}
+
+.weight-block {
+  margin-left: 52px;
+}
+
+#blue-weight {
+  background: #4c7bd9;
+}
+
+.weight-labels {
+  display: block;
+}
+
 // .hide-radios {
 //   max-height: 0;
 //   overflow: hidden;

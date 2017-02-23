@@ -24,16 +24,16 @@ export default class Chat extends React.Component {
       author_id: this.props.currentUser.id,
       body: this.state.newMessage
     };
-    
+
     createMessage(messageParams)
       .then(() => this.props.fetchThread(this.props.id))
         .then(this.setState({newMessage: ""}));
   }
 
+  // <img src={this.props.currentUser.image_url}/>
   writeNewMessage () {
     return(
       <div className="new-message-area">
-        <img src={this.props.currentUser.image}/>
 
         <textarea
           className="new-message"

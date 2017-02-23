@@ -36,9 +36,10 @@ class SingleQuestion extends React.Component {
 
   handleSubmit () {
     const userId = this.props.userId;
-    const {updatedResponse, acceptableAnswers} = this.state;
+    const {updatedResponse, acceptableAnswers, weight} = this.state;
 
     submitResponse({
+      weight: weight,
       user_id: userId,
       answer_id: updatedResponse,
       acceptable_answers: acceptableAnswers
@@ -64,11 +65,16 @@ class SingleQuestion extends React.Component {
   getCheckbox (answer) {
 
     if (this.state.acceptableAnswers.includes(answer.id.toString())) {
-      return <input defaultChecked={true} type="checkbox" value={answer.id} onClick={(e) => this.handleCheckboxChange(e)}/>;
+      return <input
+        defaultChecked={true}
+        type="checkbox" value={answer.id}
+        onClick={(e) => this.handleCheckboxChange(e)}/>;
     } else {
-      return <input type="checkbox" value={answer.id} onClick={(e) => this.handleCheckboxChange(e)}/>;
+      return <input
+        type="checkbox"
+        value={answer.id}
+        onClick={(e) => this.handleCheckboxChange(e)}/>;
     }
-    // return this.state.acceptableAnswers.includes(value) ? "checked" : null;
   }
 
   getAcceptableAnswers () {
@@ -97,8 +103,44 @@ class SingleQuestion extends React.Component {
     });
   }
 
+  getWeights () {
+    return (
+      <div className="weights">
+        <div>
+          <div
+            className = "weight-block"
+            id={this.state.weight >= 10 ? "blue-weight" : ""}
+            onClick={() => this.setState({weight: 10})}>
+          </div>
+          <span>A little</span>
+        </div>
+
+        <div>
+          <div
+            className = "weight-block"
+            id={this.state.weight >= 50 ? "blue-weight" : ""}
+            onClick={() => this.setState({weight: 50})}>
+          </div>
+          <span>Somewhat</span>
+        </div>
+
+        <div>
+          <div
+            className = "weight-block"
+            id={this.state.weight >= 100 ? "blue-weight" : ""}
+            onClick={() => this.setState({weight: 100})}>
+          </div>
+          <span>Very</span>
+        </div>
+      </div>
+    );
+  }
+
   render() {
     let displayAnswers;
+    const radioAnswers = this.getRadioButtons();
+    const acceptableAnswers = this.getAcceptableAnswers();
+    const weights = this.getWeights();
 
     const answers = this.props.question.answers.map(answer => {
       displayAnswers = this.props.userResponses ? true : false;
@@ -112,9 +154,6 @@ class SingleQuestion extends React.Component {
         </div>
       );
     });
-
-    const radioAnswers = this.getRadioButtons();
-    const acceptableAnswers = this.getAcceptableAnswers();
 
     return (
       <li className="question">
@@ -135,9 +174,14 @@ class SingleQuestion extends React.Component {
           {radioAnswers}
         </div>
 
-        <p>Answers you'll accept</p>
-        <div className={this.state.editing ? "" : "hidden"}>
+        <div className={this.state.editing ? "acceptable-answers" : "hidden"}>
+          <p>Answers you'll accept</p>
           {acceptableAnswers}
+        </div>
+
+        <div className={this.state.editing ? "" : "hidden"}>
+          <p>Importance</p>
+          {weights}
         </div>
 
         <button
@@ -145,6 +189,7 @@ class SingleQuestion extends React.Component {
           className={!this.state.editing && displayAnswers ? "hidden" : "answer-button"}>
           Answer
         </button>
+
         <button
           onClick={() => this.setState({editing: false})}
           className={this.state.editing ? "cancel-button" : "hidden"}>

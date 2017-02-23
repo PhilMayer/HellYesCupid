@@ -64,7 +64,7 @@
 .new-message {
   min-height: 121px;
   width: 706px;
-  margin: 25px 0px 0px 147px;
+  margin: 25px 0px 0px 102px;
   border: 1px solid lightgray;
 }
 
@@ -78,7 +78,7 @@
 
 
 .chat button {
-  margin-left: 148px;
+  margin-left: 103px;
   font-weight: normal;
 }
 
