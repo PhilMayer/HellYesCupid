@@ -67,18 +67,18 @@ class SingleQuestion extends React.Component {
   }
 
   getCheckbox (answer) {
-
-    if (this.state.acceptableAnswers.includes(answer.id.toString())) {
-      return <input
-        defaultChecked={true}
-        type="checkbox" value={answer.id}
-        onClick={(e) => this.handleCheckboxChange(e)}/>;
-    } else {
-      return <input
-        type="checkbox"
-        value={answer.id}
-        onClick={(e) => this.handleCheckboxChange(e)}/>;
-    }
+    const acceptables = this.state.acceptableAnswers;
+      if (acceptables && acceptables.includes(answer.id.toString())) {
+        return <input
+          defaultChecked={true}
+          type="checkbox" value={answer.id}
+          onClick={(e) => this.handleCheckboxChange(e)}/>;
+      } else {
+        return <input
+          type="checkbox"
+          value={answer.id}
+          onClick={(e) => this.handleCheckboxChange(e)}/>;
+      }
   }
 
   getAcceptableAnswers () {

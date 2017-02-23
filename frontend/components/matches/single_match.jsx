@@ -6,8 +6,8 @@ export default class SingleMatch extends React.Component {
     super(props);
   }
 
-  calculateMatch () {
-    const {loverOne, loverTwo} = this.props;
+  calculateMatch (loverOne, loverTwo) {
+    // const {loverOne, loverTwo} = this.props;
     const firstPercent = this.subCalc(loverOne, loverTwo);
     const secondPercent = this.subCalc(loverTwo, loverOne);
 
@@ -51,10 +51,17 @@ export default class SingleMatch extends React.Component {
   }
 
   render () {
-    const matchPercent = this.calculateMatch();
+    let matchPercent;
+    const {loverOne, loverTwo} = this.props;
+
+    if (loverOne.questionResponses && loverTwo.questionResponses) {
+      matchPercent = this.calculateMatch(loverOne, loverTwo);
+    }
+
+    matchPercent = matchPercent || 0;
 
     return(
-      <li className="match" key={this.props.idx}>
+      <li key={this.props.idx} className="match">
         <img src={this.props.loverTwo.image}
           onClick={() => hashHistory.push(`/profile/${this.props.loverTwo.id}`)}/>
 

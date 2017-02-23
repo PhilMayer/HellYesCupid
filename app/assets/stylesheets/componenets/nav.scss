@@ -3,7 +3,6 @@
   border-bottom: 1px solid rgba(157,186,242,0.25);
   color: #d6e1f9;
   height: 60px;
-  // line-height: 61px;
   display: flex;
   justify-content: space-between;
   &.boobies {
@@ -21,6 +20,10 @@
   margin-left:auto;
   display: flex;
 }
+//
+// #chat-icon {
+//   margin-bottom: 10px;
+// }
 
 .fa-comment-o:before {
   margin-right: 22px;
@@ -31,7 +34,6 @@
   width: 51px;
   height: 51px;
   border-radius: 50%;
-  // margin-left: auto;
   margin-right: -22px;
   margin-top: -16px;
   cursor: pointer;
@@ -48,7 +50,6 @@
   vertical-align: middle;
   font-size: 15px;
   font-weight: 400;
-  // border: 1px solid #4879c1;
   color: #fff;
   border-radius: 2px;
   margin: 10px 40px 8px 0px;

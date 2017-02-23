@@ -47,9 +47,10 @@ class Signup extends React.Component {
   // </select>
 
   part1 () {
+    console.log(window.images);
     return(
       <div className="signup">
-        <img className="big-logo" src={window.images.logo}/>
+        <h1>HELLYESCUPID</h1>
 
         <h2>Join the second best free dating site on Earth.</h2>
             <span className="i-am-a">I am a </span>

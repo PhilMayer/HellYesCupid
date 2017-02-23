@@ -8,10 +8,12 @@ const Nav = (props) => {
         <h2 onClick={() => hashHistory.push("/matches")}>Browse Matches</h2>
 
         <div id="chat-and-thumb">
-          <i
-            onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
-            className="fa fa-comment-o fa-2x" aria-hidden="true">
-          </i>
+
+            <i
+              onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
+              className="fa fa-comment-o fa-2x" aria-hidden="true">
+            </i>
+        
           <img
             className="nav-thumb"
             src={props.currentUser.image_url}

@@ -74,6 +74,12 @@
   margin-left: 3px;
   background: #ebedf2;
   border-radius: 2px;
+  transition: background-color 150ms ease-in-out;
+}
+
+.weight-block:hover {
+  background: #ccd0d9;
+  transition: background-color 150ms ease-in-out;
 }
 
 .weights span {
