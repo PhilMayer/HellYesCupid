@@ -2,9 +2,10 @@ import React from 'react';
 import ProfileQuestions from './profile_questions';
 import {connect} from 'react-redux';
 import {updateUser} from '../../actions/session_actions';
+import {fetchUser} from '../../actions/user_actions';
 
 const mapStateToProps = ({session: {currentUser}, lover}) => {
-  const profile = lover.id === currentUser.id ? lover : currentUser
+  const profile = lover.id === currentUser.id ? currentUser : lover
 
   return {
     currentUser: currentUser.id,
@@ -23,7 +24,8 @@ const mapStateToProps = ({session: {currentUser}, lover}) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    updateUser: (id, user) => dispatch(updateUser(id, user))
+    updateUser: (id, user) => dispatch(updateUser(id, user)),
+    fetchUser: (id) => dispatch(fetchUser(id))
   };
 };
 

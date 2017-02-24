@@ -51,6 +51,8 @@ class ProfileQuestionsItem extends React.Component {
     }
   }
 
+  
+
   render() {
     let submittedText = "";
     if(this.state.responseText && !this.state.editing) {
