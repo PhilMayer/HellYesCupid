@@ -14,7 +14,7 @@ padding: 5px;
 
 .rheostat-background {
   background-color: #fcfcfc;
-  border: 1px solid #d8d8d8;
+  /*border: 1px solid #d8d8d8;*/
   position: relative;
 }
 
