@@ -14,15 +14,19 @@
 
 .age-preference {
   position: relative;
-  border-bottom: 1px dotted lightblue;
+  border-bottom: 1px dotted white;
   cursor: pointer;
+}
+
+.age-preference:hover {
+  border-bottom: 1px solid white;
 }
 
 .age-box {
   position: relative;
 }
 
-.change-age-range {
+.change-range {
   position: absolute;
   right: 0px;
   top: 29px;
@@ -31,7 +35,7 @@
   margin-top: 20px;
   background: #f3f5f9;
   margin: auto;
-  width: 200px;
+  width: 194px;
   color: #5e6573;
   border-radius: 5px;
   padding: 14px 20px;
@@ -53,7 +57,11 @@
   border-left-width: 1px;
 }
 
-.change-age-range input {
+.distance-square {
+  bottom: 56px;
+}
+
+.change-range input {
   margin-left: 22px;
   height: 38px;
   width: 40%;
@@ -67,5 +75,5 @@
 .to {
   position: absolute;
   top: 35px;
-  right: 80px;
+  right: 77px;
 }

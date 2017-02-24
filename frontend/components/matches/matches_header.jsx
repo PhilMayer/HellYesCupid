@@ -31,7 +31,7 @@ export default class MatchesHeader extends React.Component {
 
   changeAgeRange () {
     return(
-      <div className={this.state.editAge === true ? "change-age-range" : "hidden"}>
+      <div className={this.state.editAge === true ? "change-range" : "hidden"}>
         <div className='square'></div>
         <h3>Ages</h3>
         <input
@@ -47,7 +47,9 @@ export default class MatchesHeader extends React.Component {
 
   changeDistanceRange () {
     return (
-      <div>
+      <div className={this.state.editDistance === true ? "change-range" : "hidden"}>
+        <div className='square distance-square'></div>
+        Distance (in miles)
         <Rheostat
           snap={true}
           values={[this.state.distance]}
@@ -73,6 +75,11 @@ export default class MatchesHeader extends React.Component {
     this.setState({editAge: !this.state.editAge});
   }
 
+  openDistanceSearch(e) {
+    e.stopPropagation();
+    this.setState({editDistance: !this.state.editDistance});
+  }
+
   render () {
     const matchGender = this.getGender();
 
@@ -91,11 +98,16 @@ export default class MatchesHeader extends React.Component {
           {this.changeAgeRange()}
         </span>
 
+        <span className="age-box">
+          <span
+            className='age-preference'
+            onClick={(e) => this.openDistanceSearch(e)}>
+            located within {this.state.distance} miles of
+          </span>
+          <span>{" " + this.props.currentUser.zipcode}</span>
 
-        <span>located within {this.state.distance} miles of</span>
-        <span>{" " + this.props.currentUser.zipcode}</span>
-
-        {this.changeDistanceRange()}
+          {this.changeDistanceRange()}
+        </span>
 
       </div>
     );

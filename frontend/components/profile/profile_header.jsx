@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import calculateMatch from '../match_algorithm';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -51,6 +52,14 @@ class ProfileHeader extends React.Component {
   }
 
   render() {
+    let matchPercent;
+    const {ownProfile, currentUser, lover} = this.props;
+
+    if (!ownProfile && currentUser.questionResponses && lover.questionResponses) {
+      matchPercent = calculateMatch(currentUser, lover);
+    }
+
+    matchPercent = matchPercent || 0;
 
     return (
       <div className="profile-header-outer">
@@ -77,6 +86,8 @@ class ProfileHeader extends React.Component {
             <span className="sub-info">{this.props.age}</span>
             <span className="dot">•</span>
             <span className="sub-info">Manhattan, NY</span>
+            <span className="dot">•</span>
+            <span className="sub-info">{matchPercent}% Match</span>
           </div>
 
           <button

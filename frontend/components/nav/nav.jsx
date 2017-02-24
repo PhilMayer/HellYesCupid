@@ -13,7 +13,7 @@ const Nav = (props) => {
               onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
               className="fa fa-comment-o fa-2x" aria-hidden="true">
             </i>
-        
+
           <img
             className="nav-thumb"
             src={props.currentUser.image_url}
@@ -33,7 +33,7 @@ const Nav = (props) => {
           <button onClick={() => props.login({
               username: "findingDemo",
               password: "starwars"
-            }).then(() => hashHistory.push("/matches"))}>
+            }).then((user) => hashHistory.push(`/matches`))}>
             Demo Login
           </button>
         </div>

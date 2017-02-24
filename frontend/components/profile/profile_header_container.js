@@ -16,7 +16,9 @@ const mapStateToProps = ({session: {currentUser}, lover}) => {
     ownId: currentUser.id,
     location: lover.zipcode,
     username: lover.username,
-    profile_pic: lover.image_url
+    profile_pic: lover.image_url,
+    currentUser,
+    lover
   };
 };
 

@@ -1,61 +1,62 @@
 import React from 'react';
 import {Link, hashHistory} from 'react-router';
+import calculateMatch from '../match_algorithm';
 
 export default class SingleMatch extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  calculateMatch (loverOne, loverTwo) {
-    // const {loverOne, loverTwo} = this.props;
-    const firstPercent = this.subCalc(loverOne, loverTwo);
-    const secondPercent = this.subCalc(loverTwo, loverOne);
-
-    const product = firstPercent * secondPercent;
-    const numQuestions = Object.keys(loverOne.questionResponses).length;
-
-    const match_percentage = Math.pow(product, 1 / numQuestions) * 100;
-    return Math.round(match_percentage);
-  }
-
-  subCalc (lover, otherLover) {
-    let numerator = 0;
-    let denomenator = 0;
-    let loverQuestions = Object.keys(lover.questionResponses);
-    let otherLoverQuestions = Object.keys(otherLover.questionResponses);
-
-    loverQuestions.forEach(question => {
-      if (otherLoverQuestions.includes(question)) {
-        const loverOneResponses = lover.questionResponses[question];
-        const loverTwoResponses = otherLover.questionResponses[question];
-
-        // const loverResponseKeys = Object.keys(lover.questionResponses[question]);
-        // const otherLoverResponseKeys = Object.keys(otherLover.questionResponses[question]);
-
-        const loverResponseKeys = Object.keys(loverOneResponses);
-        const otherLoverResponseKeys = Object.keys(loverTwoResponses);
-
-        const loverResponse = loverOneResponses[loverResponseKeys[loverResponseKeys.length - 1]];
-        const otherLoverResponse = loverTwoResponses[otherLoverResponseKeys[otherLoverResponseKeys.length - 1]];
-
-        const weight = loverResponse.weight;
-        denomenator += weight;
-        if (loverResponse.acceptable_answers
-          .includes(otherLoverResponse.answer_id.toString())) {
-              numerator += weight;
-        }
-      }
-    });
-
-    return numerator / denomenator;
-  }
+  // calculateMatch (loverOne, loverTwo) {
+  //   // const {loverOne, loverTwo} = this.props;
+  //   const firstPercent = this.subCalc(loverOne, loverTwo);
+  //   const secondPercent = this.subCalc(loverTwo, loverOne);
+  //
+  //   const product = firstPercent * secondPercent;
+  //   const numQuestions = Object.keys(loverOne.questionResponses).length;
+  //
+  //   const match_percentage = Math.pow(product, 1 / numQuestions) * 100;
+  //   return Math.round(match_percentage);
+  // }
+  //
+  // subCalc (lover, otherLover) {
+  //   let numerator = 0;
+  //   let denomenator = 0;
+  //   let loverQuestions = Object.keys(lover.questionResponses);
+  //   let otherLoverQuestions = Object.keys(otherLover.questionResponses);
+  //
+  //   loverQuestions.forEach(question => {
+  //     if (otherLoverQuestions.includes(question)) {
+  //       const loverOneResponses = lover.questionResponses[question];
+  //       const loverTwoResponses = otherLover.questionResponses[question];
+  //
+  //       // const loverResponseKeys = Object.keys(lover.questionResponses[question]);
+  //       // const otherLoverResponseKeys = Object.keys(otherLover.questionResponses[question]);
+  //
+  //       const loverResponseKeys = Object.keys(loverOneResponses);
+  //       const otherLoverResponseKeys = Object.keys(loverTwoResponses);
+  //
+  //       const loverResponse = loverOneResponses[loverResponseKeys[loverResponseKeys.length - 1]];
+  //       const otherLoverResponse = loverTwoResponses[otherLoverResponseKeys[otherLoverResponseKeys.length - 1]];
+  //
+  //       const weight = loverResponse.weight;
+  //       denomenator += weight;
+  //       if (loverResponse.acceptable_answers
+  //         .includes(otherLoverResponse.answer_id.toString())) {
+  //             numerator += weight;
+  //       }
+  //     }
+  //   });
+  //
+  //   return numerator / denomenator;
+  // }
 
   render () {
     let matchPercent;
     const {loverOne, loverTwo} = this.props;
 
     if (loverOne.questionResponses && loverTwo.questionResponses) {
-      matchPercent = this.calculateMatch(loverOne, loverTwo);
+      matchPercent = calculateMatch(loverOne, loverTwo);
     }
 
     matchPercent = matchPercent || 0;
