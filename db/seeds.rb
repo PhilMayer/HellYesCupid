@@ -65,7 +65,7 @@ users = []
 
   users.push(u9)
 
-    couple = [u1, u9]
+
     thread = Conversation.create!(lover_one_id: u1.id, lover_two_id: u9.id)
     thread2 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u8.id)
     thread3 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u7.id)
@@ -74,14 +74,24 @@ users = []
     thread6 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u4.id)
     thread7 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u3.id)
     thread8 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u2.id)
-    thread9 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u1.id)
-    #
 
+    #
+    couple = [u1, u9]
       10.times do
         Message.create!(author_id: couple.sample.id, thread_id: thread.id, body: Faker::Lorem.paragraph(1, true, 4))
+        Message.create!(author_id: u9.id, thread_id: thread.id, body: "Life is all about finding the one person who really makes you
+        happy. I think, for me, that is you.")
       end
 
-      Message.create!(author_id: couple.sample.id, thread_id: thread.id, body: Faker::Lorem.paragraph(1, true, 4))
+      Message.create!(author_id: u8.id, thread_id: thread2.id, body: "Hey do you use Chrome or Safari?")
+      Message.create!(author_id: u7.id, thread_id: thread3.id, body: "Bro omg we should grab a coffee sometime!")
+      Message.create!(author_id: u6.id, thread_id: thread4.id, body: "Mate your profile is AMAZING. Here's my number: 23445324233")
+      Message.create!(author_id: u5.id, thread_id: thread5.id, body: "Uhhh hmmmm, yeah ok...yeah. Ok. Hmmmmmmm. Hello.")
+      Message.create!(author_id: u4.id, thread_id: thread6.id, body: "Hey gurl if you make give me an ajax request I'll return you a
+      promise, then we'll do some other stuff")
+      Message.create!(author_id: u3.id, thread_id: thread7.id, body: "Bet you can't name pokemon 90-95")
+      Message.create!(author_id: u2.id, thread_id: thread8.id, body: "I have just one question: do you have any snacks.")
+
 
   genders = ["Man", "Woman"]
   sexualities = ["Gay", "Straight", "Bisexual"]
