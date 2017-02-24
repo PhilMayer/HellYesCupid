@@ -5,10 +5,14 @@ import {hashHistory} from 'react-router';
 
 class Profile extends React.Component {
 
+  // componentDidMount () {
+  //   this.props.fetchUser(this.props.currentUser);
+  // }
+
   profileNav () {
     const id = this.props.params.id;
     const location = this.props.location.pathname;
-    
+
     if (parseInt(id) === this.props.ownId) {
       return (
         <div className="profile-nav">

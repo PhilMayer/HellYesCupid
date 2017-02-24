@@ -51,7 +51,7 @@ class ProfileQuestionsItem extends React.Component {
     }
   }
 
-  
+
 
   render() {
     let submittedText = "";
