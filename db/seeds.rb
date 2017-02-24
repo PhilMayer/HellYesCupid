@@ -59,6 +59,11 @@ users = []
 
   users.push(u8)
 
+  u8 = User.create!(username: "youMakeMeHappy", password: "starwars", gender: "Man",
+    sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
+    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/766/medium/Terrance_Xin.jpg?1483382997")
+
+
 
   genders = ["Man", "Woman"]
   sexualities = ["Gay", "Straight", "Bisexual"]
