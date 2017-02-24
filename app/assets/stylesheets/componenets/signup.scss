@@ -1,5 +1,5 @@
 .signup {
-  padding-top: 200px;
+  padding-top: 80px;
   background: #104da1;
   height: 880px;
   text-align: center;
@@ -17,10 +17,12 @@
 }
 
 .big-logo {
-  height: 200px;
+  height: 400px;
   width: auto;
-  border-radius: 50px;
+  border-radius: 50%;
   display: block;
+  margin: 0 auto;
+  
 }
 
 .signup-dropdown {

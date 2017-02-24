@@ -1,18 +1,21 @@
 import React from 'react';
 import {Link, hashHistory, withRouter} from 'react-router';
 
+// <i
+//   onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
+//   className="fa fa-comment-o fa-2x" aria-hidden="true">
+// </i>
+
 const Nav = (props) => {
   if(props.currentUser) {
     return (
       <div className="nav">
+        <img src={window.images.logo} className="small-logo"/>
         <h2 onClick={() => hashHistory.push("/matches")}>Browse Matches</h2>
+        <h2 onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}>Messages</h2>
 
         <div id="chat-and-thumb">
 
-            <i
-              onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
-              className="fa fa-comment-o fa-2x" aria-hidden="true">
-            </i>
 
           <img
             className="nav-thumb"

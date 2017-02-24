@@ -50,7 +50,7 @@ class Signup extends React.Component {
     console.log(window.images);
     return(
       <div className="signup">
-        <h1>HELLYESCUPID</h1>
+        <img src={window.images.logo} className="big-logo"/>
 
         <h2>Join the second best free dating site on Earth.</h2>
             <span className="i-am-a">I am a </span>

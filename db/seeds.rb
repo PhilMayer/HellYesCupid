@@ -59,11 +59,29 @@ users = []
 
   users.push(u8)
 
-  u8 = User.create!(username: "youMakeMeHappy", password: "starwars", gender: "Man",
+  u9 = User.create!(username: "youMakeMeHappy", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
     max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/766/medium/Terrance_Xin.jpg?1483382997")
 
+  users.push(u9)
 
+    couple = [u1, u9]
+    thread = Conversation.create!(lover_one_id: u1.id, lover_two_id: u9.id)
+    thread2 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u8.id)
+    thread3 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u7.id)
+    thread4 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u6.id)
+    thread5 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u5.id)
+    thread6 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u4.id)
+    thread7 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u3.id)
+    thread8 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u2.id)
+    thread9 = Conversation.create!(lover_one_id: u1.id, lover_two_id: u1.id)
+    #
+
+      10.times do
+        Message.create!(author_id: couple.sample.id, thread_id: thread.id, body: Faker::Lorem.paragraph(1, true, 4))
+      end
+
+      Message.create!(author_id: couple.sample.id, thread_id: thread.id, body: Faker::Lorem.paragraph(1, true, 4))
 
   genders = ["Man", "Woman"]
   sexualities = ["Gay", "Straight", "Bisexual"]

@@ -86,8 +86,8 @@ class ProfileHeader extends React.Component {
             <span className="sub-info">{this.props.age}</span>
             <span className="dot">•</span>
             <span className="sub-info">Manhattan, NY</span>
-            <span className="dot">•</span>
-            <span className="sub-info">{matchPercent}% Match</span>
+            <span className={ownProfile ? "hidden" : "dot"}>•</span>
+            <span className={ownProfile ? "hidden" : "sub-info"}>{matchPercent}% Match</span>
           </div>
 
           <button
