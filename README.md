@@ -3,7 +3,7 @@
 [Demo HellYesCupid][hellyescupid]
 [hellyescupid]: http://hellyescupid.com
 
-![signup]
+![signup](./app/assets/images/Signup.png)
 
 ##Abstract
 At least for this developer, the original OkCupid always produced the best dates, its wealth of information on matches and revered matching algorithm being indispensable to the bachelor needing to distinguish between what might be a good date, and what might turn out to be so bad it wouldn’t even be worth the story.
@@ -85,4 +85,3 @@ These are some features that HellYesCupid would could definitely stand to benefi
 	* Similarly obvious
 
 
-[signup]: ./app/assets/images/Screen Shot 2017-02-27 at 11.24.55 AM.png
