@@ -1,5 +1,3 @@
-# README
-
 #HellYesCupid
 
 [Demo HellYesCupid][hellyescupid]
@@ -53,28 +51,28 @@ Yes, you can even send messages on HellYesCupid. Messages are created by hitting
 ##Libraries to Thank
 The following libraries contributed heavily to the devlopment of HellYesCupid, and are hearby thanked for their services:
 
-* React.js
-* Redux
-* BCrypt for password hashing
-* Paperclip for image uploading
-* Figaro for AWS keys
-* Rheostat for that excellent slider to filter by distance
-* Geokit-rails to filter by distance 
-* Jbuilder v. 2.5. Really can’t say enough about this one.
+- [React.js](https://facebook.github.io/react/)
+- [Redux](http://redux.js.org/)
+- [BCrypt](https://github.com/codahale/bcrypt-ruby) for password hashing
+- [Paperclip](https://github.com/thoughtbot/paperclip) for image uploading
+- [Figaro](https://github.com/laserlemon/figaro) for storing AWS keys
+- [Rheostat] (https://github.com/airbnb/rheostat) for that excellent slider to filter by distance
+- [Geokit-Rails] (https://github.com/geokit/geokit-rails) to filter by distance 
+* [Jbuilder v. 2.5]. (https://github.com/rails/jbuilder) Really can’t say enough about this one.
 
 
 ##Future Development
 These are some features that HellYesCupid would could definitely stand to benefit from going forward:
 
 * More options for sexuality and gender.
-	*This was sadly beyond the scope of the MVP, but is first on the list for post-MVP development. 
+	* This was sadly beyond the scope of the MVP, but is first on the list for post-MVP development. 
 
 * Uploading of multiple photos. 
-	*Given that you would never really date someone based on a single photo, this seems fairly essential moving forward.
+	* Given that you would never really date someone based on a single photo, this seems fairly essential moving forward.
 
 * Live chat
-	*For obvious reasons
+	* For obvious reasons
 
 * Likes
-	*Similarly obvious
+	* Similarly obvious
 
