@@ -40,6 +40,9 @@ When two people have answered identical questions, the matching algorithm kicks 
 4. We repeat the process, expect now our roles are reversed (we check your acceptable answers against my answers).
 5. With the two match percentages in hand, we multiply them then take the nth root of the result, where n is the number of questions examined. If, at this point, you’re saying to yourself, “well that’s just a geometric mean!” you’d be spot on.
 
+`const match_percentage = Math.pow(product, 1 / numQuestions) * 100;
+ return Math.round(match_percentage);`
+
 And that’s how the matching algorithm works. 
 
 ##Profiles
@@ -58,7 +61,7 @@ The following libraries contributed heavily to the devlopment of HellYesCupid, a
 - [Figaro](https://github.com/laserlemon/figaro) for storing AWS keys
 - [Rheostat] (https://github.com/airbnb/rheostat) for that excellent slider to filter by distance
 - [Geokit-Rails] (https://github.com/geokit/geokit-rails) to filter by distance 
-* [Jbuilder v. 2.5]. (https://github.com/rails/jbuilder) Really can’t say enough about this one.
+- [Jbuilder v. 2.5]. (https://github.com/rails/jbuilder) Really can’t say enough about this one.
 
 
 ##Future Development
