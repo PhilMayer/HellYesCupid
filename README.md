@@ -21,7 +21,9 @@ The frontend of HellYesCupid is but a single page, constructed using the beloved
 ##Matches
 In the “Browse Matches” section of the app, HellYesCupid serves the user matches based on their sexual preference and gender orientation. Users can then further filter by age or by distance.
 
-`@matches = User.where(:age => (min_age)..(max_age)).where.not(:id => current_user.id).where(:gender => current_user.preference).within(distance, :origin => current_user)`
+```ruby
+@matches = User.where(:age => (min_age)..(max_age)).where.not(:id => current_user.id).where(:gender => current_user.preference).within(distance, :origin => current_user)
+```
 
 ##Questions
 In order to determine their fit with a potential match, users can answer personality questions. These work as follows:
@@ -44,9 +46,10 @@ When two people have answered identical questions, the matching algorithm kicks 
 4. We repeat the process, expect now our roles are reversed (we check your acceptable answers against my answers).
 5. With the two match percentages in hand, we multiply them then take the nth root of the result, where n is the number of questions examined. If, at this point, you’re saying to yourself, “well that’s just a geometric mean!” you’d be spot on.
 
-`const match_percentage = Math.pow(product, 1 / numQuestions) * 100;`
-
-`return Math.round(match_percentage);`
+```javascript
+const match_percentage = Math.pow(product, 1 / numQuestions) * 100;
+return Math.round(match_percentage);
+```
 
 And that’s how the matching algorithm works. 
 
