@@ -32,10 +32,10 @@ In order to determine their fit with a potential match, users can answer persona
 2. Users choose among which answers they find acceptable (e.g. how many times a day do you brush your teeth?)
 3. Users weigh the question based on how much bearing the question has on their everyday lives. The weightings are:
 
-1 for not important
-10 for a little important
-50 for somewhat important
-100 for very important
+* 1 for not important
+* 10 for a little important
+* 50 for somewhat important
+* 100 for very important
 
 ##The Matching Algorithm
 When two people have answered identical questions, the matching algorithm kicks in. It works like this:
