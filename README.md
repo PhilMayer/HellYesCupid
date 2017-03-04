@@ -8,7 +8,7 @@
 ##Abstract
 At least for this developer, the original OkCupid always produced the best dates, its wealth of information on matches and revered matching algorithm being indispensable to the bachelor needing to distinguish between what might be a good date, and what might turn out to be so bad it wouldn’t even be worth the story.
 
-It was in this spirit that the developer set out to clone one of his very favorite apps. The final product is HellYesCupid, a dating web app that allows lovers to view matches, answer match questions, and message potential future spouses or spurned ex-es. 
+It was in this spirit that the developer set out to clone one of his very favorite apps. The final product is HellYesCupid, a dating web app that allows lovers to view and filter matches, answer match questions, and message potential future spouses or spurned ex-es. 
 
 ##Architecture
 
@@ -28,9 +28,9 @@ In the “Browse Matches” section of the app, HellYesCupid serves the user mat
 ##Questions
 In order to determine their fit with a potential match, users can answer personality questions. These work as follows:
 
-Users choose one answer to the question
-Users choose among which answers they find acceptable (e.g. how many times a day do you brush your teeth?)
-Users weigh the question based on how much bearing the question has on their everyday lives. The weightings are:
+1. Users choose one answer to the question
+2. Users choose among which answers they find acceptable (e.g. how many times a day do you brush your teeth?)
+3. Users weigh the question based on how much bearing the question has on their everyday lives. The weightings are:
 
 1 for not important
 10 for a little important
