@@ -43,7 +43,7 @@ When two people have answered identical questions, the matching algorithm kicks 
 1. We first add up all of the points given to my questions, where the points are simply the weights outlined above.
 2. We determine if your answer was in my list of acceptable answers. If so, you get those points for the question (1, 10, 50 or 100).
 3. The number of points you scored out of my total possible number of points is your match percentage with me.
-4. We repeat the process, expect now our roles are reversed (we check your acceptable answers against my answers).
+4. We repeat the process, except now our roles are reversed (we check your acceptable answers against my answers).
 5. With the two match percentages in hand, we multiply them then take the nth root of the result, where n is the number of questions examined. If, at this point, you’re saying to yourself, “well that’s just a geometric mean!” you’d be spot on.
 
 ```javascript
