@@ -8,7 +8,7 @@ const mapStateToProps = ({session: {currentUser}, chat}, ownProps) => {
   return {
     id,
     chat,
-    currentUser: currentUser
+    currentUser
   };
 };
 

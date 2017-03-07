@@ -4,7 +4,6 @@ import calculateMatch from '../match_algorithm';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
-
     super(props);
     this.state = {
       changePic: false,
@@ -13,15 +12,15 @@ class ProfileHeader extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
-  componentDidMount () {
-    this.props.fetchUser(this.props.userId);
-  }
-
-  componentWillReceiveProps (newProps) {
-    if (newProps.userId !== this.props.userId) {
-      this.props.fetchUser(newProps.userId);
-    }
-  }
+  // componentDidMount () {
+  //   this.props.fetchUser(this.props.userId);
+  // }
+  //
+  // componentWillReceiveProps (newProps) {
+  //   if (newProps.userId !== this.props.userId) {
+  //     this.props.fetchUser(newProps.userId);
+  //   }
+  // }
 
   createChat () {
     const id1 = this.props.ownId;

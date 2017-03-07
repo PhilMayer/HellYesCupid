@@ -5,7 +5,6 @@ class ProfileQuestionsItem extends React.Component {
   constructor(props) {
     super(props);
     const isOwnProfile = (this.props.id === parseInt(this.props.router.params.id));
-
     this.state = {
       editing: false,
       questionText: this.questionText(),
@@ -15,6 +14,11 @@ class ProfileQuestionsItem extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillReceiveProps (newProps) {
+    const isOwnProfile = (newProps.id === parseInt(newProps.router.params.id));
+    this.setState({canEdit: isOwnProfile, editing: false, responseText: newProps.response});
   }
 
   handleSubmit () {

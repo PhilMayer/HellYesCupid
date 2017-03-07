@@ -2,17 +2,6 @@ import React from 'react';
 import ProfileQuestionsItem from './profile_questions_item';
 
 class ProfileQuestions extends React.Component {
-
-  // componentDidMount () {
-  //   this.props.fetchUser(this.props.currentUser);
-  // }
-
-  componentWillReceiveProps (newProps) {
-    if (newProps.params.id !== this.props.params.id) {
-      this.props.fetchUser(newProps.params.id);
-    }
-  }
-
   render () {
     let questionTitles = Object.keys(this.props.questions);
     const questionsAndResponses = questionTitles.map((question, idx) => (
@@ -31,7 +20,6 @@ class ProfileQuestions extends React.Component {
       {questionsAndResponses}
     </ul>
   );
-
   }
 }
 

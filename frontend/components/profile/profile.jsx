@@ -4,10 +4,14 @@ import ProfileQuestionsContainer from './profile_questions_container';
 import {hashHistory} from 'react-router';
 
 class Profile extends React.Component {
+  
+  componentWillMount () {
+    this.props.fetchUser(this.props.params.id);
+  }
 
-  // componentDidMount () {
-  //   this.props.fetchUser(this.props.currentUser);
-  // }
+  componentWillReceiveProps (newProps) {
+    this.props.fetchUser(newProps.params.id);
+  }
 
   profileNav () {
     const id = this.props.params.id;
@@ -39,6 +43,7 @@ class Profile extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="profile">
         <ProfileHeaderContainer userId={this.props.params.id}/>
