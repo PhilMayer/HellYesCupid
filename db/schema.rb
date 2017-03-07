@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(version: 20170223013023) do
   end
 
   create_table "messages", force: :cascade do |t|
-    t.integer  "author_id"
-    t.integer  "thread_id"
-    t.text     "body"
+    t.integer  "author_id",  null: false
+    t.integer  "thread_id",  null: false
+    t.text     "body",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_messages_on_author_id", using: :btree
@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 20170223013023) do
   end
 
   create_table "personality_questions", force: :cascade do |t|
-    t.string   "title",      null: false
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

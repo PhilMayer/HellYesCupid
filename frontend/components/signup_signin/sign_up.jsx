@@ -47,7 +47,6 @@ class Signup extends React.Component {
   // </select>
 
   part1 () {
-    console.log(window.images);
     return(
       <div className="signup">
         <img src={window.images.logo} className="big-logo"/>
