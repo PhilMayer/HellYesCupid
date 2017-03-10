@@ -10,7 +10,7 @@ const Nav = (props) => {
   if(props.currentUser) {
     return (
       <div className="nav">
-        <img src={window.images.logo} className="small-logo"/>
+        <img src={window.images.small} className="small-logo"/>
         <h2 onClick={() => hashHistory.push("/matches")}>Browse Matches</h2>
         <h2 onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}>Messages</h2>
 

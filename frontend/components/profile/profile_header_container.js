@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 import ProfileHeader from './profile_header';
 import {updateUser} from '../../actions/session_actions';
 import {fetchUser} from '../../actions/user_actions';
-import {createThread} from '../../actions/thread_actions';
+import {createThread, fetchThreads} from '../../actions/thread_actions';
 
-const mapStateToProps = ({session: {currentUser}, lover}) => {
+const mapStateToProps = ({session: {currentUser}, lover, threads}) => {
   const ownProfile = (lover.id === currentUser.id);
 
   return {
@@ -18,13 +18,15 @@ const mapStateToProps = ({session: {currentUser}, lover}) => {
     username: lover.username,
     profile_pic: lover.image_url,
     currentUser,
-    lover
+    lover,
+    threads
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
+    fetchThreads: () => dispatch(fetchThreads()),
     createChat: (chat) => dispatch(createThread(chat)),
     updateUser: (id, user) => dispatch(updateUser(id, user))
   };

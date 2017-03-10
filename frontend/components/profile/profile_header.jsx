@@ -12,9 +12,9 @@ class ProfileHeader extends React.Component {
     this.updateFile = this.updateFile.bind(this);
   }
 
-  // componentDidMount () {
-  //   this.props.fetchUser(this.props.userId);
-  // }
+  componentDidMount () {
+    this.props.fetchThreads();
+  }
   //
   // componentWillReceiveProps (newProps) {
   //   if (newProps.userId !== this.props.userId) {
@@ -25,9 +25,19 @@ class ProfileHeader extends React.Component {
   createChat () {
     const id1 = this.props.ownId;
     const id2 = this.props.id;
+    let chatExists = false;
 
-    this.props.createChat({lover_one_id: id1, lover_two_id: id2})
+    for (let threadId in this.props.threads) {
+      if (this.props.threads[threadId].loverId === id2) {
+        chatExists = true;
+        this.props.router.push(`profile/${id1}/threads/${threadId}`)
+      }
+    }
+
+    if (!chatExists) {
+      this.props.createChat({lover_one_id: id1, lover_two_id: id2})
       .then((chat) => this.props.router.push(`profile/${id1}/threads/${chat.thread.id}`));
+    }
   }
 
   handleSubmit () {

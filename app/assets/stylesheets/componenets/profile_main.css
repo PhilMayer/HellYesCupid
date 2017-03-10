@@ -112,3 +112,7 @@ textarea {
   background-color: #29d56f;
   color: white;
 }
+
+.profile-questions button:last-child:hover {
+  background-color: #f3f5d9;
+}
