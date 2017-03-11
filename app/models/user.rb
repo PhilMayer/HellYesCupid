@@ -29,7 +29,7 @@ acts_as_mappable :lat_column_name => :latitude, :lng_column_name => :longitude
   source: :thread
  )
 
- has_attached_file :image, default_url: "test.png"
+ has_attached_file :image, default_url: "strangerbarb.png"
  validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
  def self.find_by_credentials(username, pw)

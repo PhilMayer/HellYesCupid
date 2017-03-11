@@ -1,5 +1,4 @@
 const calculateMatch = (loverOne, loverTwo) => {
-  // const {loverOne, loverTwo} = this.props;
   const firstPercent = subCalc(loverOne, loverTwo);
   const secondPercent = subCalc(loverTwo, loverOne);
 
@@ -20,9 +19,6 @@ const subCalc = (lover, otherLover) => {
     if (otherLoverQuestions.includes(question)) {
       const loverOneResponses = lover.questionResponses[question];
       const loverTwoResponses = otherLover.questionResponses[question];
-
-      // const loverResponseKeys = Object.keys(lover.questionResponses[question]);
-      // const otherLoverResponseKeys = Object.keys(otherLover.questionResponses[question]);
 
       const loverResponseKeys = Object.keys(loverOneResponses);
       const otherLoverResponseKeys = Object.keys(loverTwoResponses);

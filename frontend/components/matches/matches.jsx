@@ -9,7 +9,6 @@ export default class Matches extends React.Component {
 
   componentDidMount () {
     this.props.fetchMatches();
-
   }
 
   render() {
