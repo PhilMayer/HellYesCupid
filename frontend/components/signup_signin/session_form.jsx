@@ -51,7 +51,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="signup">
-        <h1>HellYesCupid</h1>
+        <img src={window.images.logo} className="big-logo"/>
         <h2>{text}</h2>
         <form onSubmit={this.handleSubmit}>
 

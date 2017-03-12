@@ -79,7 +79,7 @@ class ProfileQuestionsItem extends React.Component {
 
             <textarea
               onChange={(e) => this.setState({responseText: e.target.value, canSave: true})}
-              placeholder="Just a summary people. Don't try too hard.">
+              placeholder="Don't try too hard y'all.">
               {this.state.responseText}
             </textarea>
 

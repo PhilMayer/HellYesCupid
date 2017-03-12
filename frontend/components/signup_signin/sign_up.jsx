@@ -88,7 +88,7 @@ class Signup extends React.Component {
   part2() {
     return(
       <div className="signup">
-        <h1>HellYesCupid</h1>
+        <img src={window.images.logo} className="big-logo"/>
         <h2>Almost there! Just a little more to go.</h2>
 
         <label htmlFor="age">Age</label>
