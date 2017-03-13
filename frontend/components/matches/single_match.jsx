@@ -10,7 +10,7 @@ export default class SingleMatch extends React.Component {
   render () {
     let matchPercent;
     const {loverOne, loverTwo} = this.props;
-
+    
     if (loverOne.questionResponses && loverTwo.questionResponses) {
       matchPercent = calculateMatch(loverOne, loverTwo);
     }
@@ -18,7 +18,7 @@ export default class SingleMatch extends React.Component {
     matchPercent = matchPercent || 0;
 
     return(
-      <li key={this.props.idx} className="match">
+      <li className="match">
         <img src={this.props.loverTwo.image}
           onClick={() => hashHistory.push(`/profile/${this.props.loverTwo.id}`)}/>
 

@@ -16,6 +16,22 @@
   margin-bottom: 100px;
 }
 
+.older-messages {
+  width: 130px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+  font-size: 12px;
+  text-align: center;
+  border: 1px solid #ccd0d9;
+  border-radius: 3px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.older-messages:hover {
+  background-color: #D3D3D3
+}
+
 .chat img {
   width: 51px;
   height: 51px;

@@ -72,12 +72,12 @@ export default class MatchesHeader extends React.Component {
 
   openAgeSearch (e) {
     e.stopPropagation();
-    this.setState({editAge: !this.state.editAge});
+    this.setState({editAge: !this.state.editAge, editDistance: false});
   }
 
   openDistanceSearch(e) {
     e.stopPropagation();
-    this.setState({editDistance: !this.state.editDistance});
+    this.setState({editDistance: !this.state.editDistance, editAge: false});
   }
 
   render () {

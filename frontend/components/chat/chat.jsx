@@ -7,7 +7,8 @@ export default class Chat extends React.Component {
     super(props);
 
     this.state = {
-      newMessage: ""
+      newMessage: "",
+      numMessagesToDisplay: 5
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -15,7 +16,6 @@ export default class Chat extends React.Component {
 
   componentDidMount () {
     this.props.fetchThread(this.props.id);
-
   }
 
   handleSubmit () {
@@ -53,12 +53,15 @@ export default class Chat extends React.Component {
   }
 
   render () {
-    const messages = this.props.chat.messages;
     let styledMessages;
+    let messagesNotDisplayed;
+    const messages = this.props.chat.messages;
 
     if(messages) {
-      styledMessages = messages.map(message => (
+      messagesNotDisplayed = messages.length - this.state.numMessagesToDisplay;
+      styledMessages = messages.slice(0, this.state.numMessagesToDisplay).map((message, idx) => (
         <SingleMessageContainer
+          key={idx}
           message={message}
           currentUser={this.props.currentUser}/>
       ));
@@ -67,6 +70,11 @@ export default class Chat extends React.Component {
     return (
       <div className="blue-background">
         <ul className="chat">
+          <p
+            onClick={() => this.setState({numMessagesToDisplay: messages.length})} 
+            className={messagesNotDisplayed > 0 ? "older-messages" : "hidden"}>
+            See {messagesNotDisplayed} older messages
+          </p>
           {styledMessages}
           <li>{this.writeNewMessage()}</li>
         </ul>

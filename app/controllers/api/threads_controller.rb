@@ -15,9 +15,6 @@ class Api::ThreadsController < ApplicationController
 
   def show
     @thread = Conversation.find(params[:id])
-
-    # @lover = current_user.id === thread_params[:lover_one_id] ?
-    # User.find_by_id(thread_params[:lover_two_id]) : User.find_by_id(thread_params[:lover_one_id])
   end
 
   private

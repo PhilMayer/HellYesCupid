@@ -1,11 +1,6 @@
 import React from 'react';
 import {Link, hashHistory, withRouter} from 'react-router';
 
-// <i
-//   onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}
-//   className="fa fa-comment-o fa-2x" aria-hidden="true">
-// </i>
-
 const Nav = (props) => {
   if(props.currentUser) {
     return (
@@ -51,7 +46,4 @@ const Nav = (props) => {
   }
 };
 
-// <div>
-//   <Link to='/signup'>Sign up</Link>
-// </div>
 export default withRouter(Nav);

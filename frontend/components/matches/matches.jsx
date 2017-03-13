@@ -16,7 +16,7 @@ export default class Matches extends React.Component {
     if(this.props.matches) {
       matches = this.props.matches.map((match, idx) => {
         return(
-          <SingleMatch idx={idx} loverOne={this.props.currentUser} loverTwo={match} />
+          <SingleMatch key={idx} loverOne={this.props.currentUser} loverTwo={match} />
         );
       });
     }
