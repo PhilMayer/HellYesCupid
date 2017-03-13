@@ -1,6 +1,7 @@
 @matches.each do |user|
   json.set! user.id do
-    json.extract! user, :username, :age, :zipcode, :image, :id
+    json.extract! user, :username, :age, :zipcode, :id
+    json.image image_url(user.image.url)
     json.questionResponses do
       user.question_responses.each do |response|
         json.set! response.personality_question_answer.question_id do

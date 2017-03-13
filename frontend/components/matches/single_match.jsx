@@ -10,7 +10,7 @@ export default class SingleMatch extends React.Component {
   render () {
     let matchPercent;
     const {loverOne, loverTwo} = this.props;
-    
+
     if (loverOne.questionResponses && loverTwo.questionResponses) {
       matchPercent = calculateMatch(loverOne, loverTwo);
     }
