@@ -57,6 +57,9 @@ And that’s how the matching algorithm works.
 Each user has their very own profile, where they can answer or not answer questions common to all profiles. They can also upload and re-upload a single profile picture.
 
 ##Messages
+
+![Messages](.app/assets/images/messages.gif)
+
 Messages are created by hitting the “Message” button on another user’s profile, at which point a thread is created and the two lovers can chat for as long as their hearts desire.
 
 ##Libraries to Thank
