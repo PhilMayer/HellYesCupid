@@ -1,9 +1,8 @@
 # HellYesCupid
 
-[Demo HellYesCupid][hellyescupid]
-[hellyescupid]: http://hellyescupid.com
+[Demo HellYesCupid](http://hellyescupid.com)
 
-![signup](./app/assets/images/hell_yes_landing.png)
+![signup](app/assets/images/hell_yes_landing.png)
 
 ## Abstract
 OkCupid always seemed to produce the best dates, its wealth of information on matches and matching algorithm being indispensable to the bachelor needing to distinguish between what might be a good date, and what might turn out to be so bad it wouldn’t even be worth the story.
@@ -70,9 +69,9 @@ The following libraries contributed heavily to the development of HellYesCupid, 
 - [BCrypt](https://github.com/codahale/bcrypt-ruby) for password hashing
 - [Paperclip](https://github.com/thoughtbot/paperclip) for image uploading
 - [Figaro](https://github.com/laserlemon/figaro) for storing AWS keys
-- [Rheostat] (https://github.com/airbnb/rheostat) for that excellent slider to filter by distance
-- [Geokit-Rails] (https://github.com/geokit/geokit-rails) to filter by distance
-- [Jbuilder v. 2.5] (https://github.com/rails/jbuilder) Really can’t say enough about this one.
+- [Rheostat](https://github.com/airbnb/rheostat) for that excellent slider to filter by distance
+- [Geokit-Rails](https://github.com/geokit/geokit-rails) to filter by distance
+- [Jbuilder v. 2.5](https://github.com/rails/jbuilder) Really can’t say enough about this one.
 
 
 ## Future Development
