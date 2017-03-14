@@ -58,7 +58,7 @@ Each user has their very own profile, where they can answer or not answer questi
 
 ##Messages
 
-![Messages](.app/assets/images/messages.gif)
+![Messages](app/assets/images/messages.gif)
 
 Messages are created by hitting the “Message” button on another user’s profile, at which point a thread is created and the two lovers can chat for as long as their hearts desire.
 
