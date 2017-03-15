@@ -54,11 +54,11 @@ export default class Chat extends React.Component {
 
   render () {
     let styledMessages;
-    let messagesNotDisplayed;
+    let numMessagesNotDisplayed;
     const messages = this.props.chat.messages;
 
     if(messages) {
-      messagesNotDisplayed = messages.length - this.state.numMessagesToDisplay;
+      numMessagesNotDisplayed = messages.length - this.state.numMessagesToDisplay;
       styledMessages = messages.slice(messages.length - this.state.numMessagesToDisplay, messages.length).map((message, idx) => (
         <SingleMessageContainer
           key={idx}
@@ -72,8 +72,8 @@ export default class Chat extends React.Component {
         <ul className="chat">
           <p
             onClick={() => this.setState({numMessagesToDisplay: messages.length})}
-            className={messagesNotDisplayed > 0 ? "older-messages" : "hidden"}>
-            See {messagesNotDisplayed} older messages
+            className={numMessagesNotDisplayed > 0 ? "older-messages" : "hidden"}>
+            See {numMessagesNotDisplayed} older messages
           </p>
           {styledMessages}
           <li>{this.writeNewMessage()}</li>
