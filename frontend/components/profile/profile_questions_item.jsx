@@ -4,11 +4,14 @@ import { withRouter } from 'react-router';
 class ProfileQuestionsItem extends React.Component {
   constructor(props) {
     super(props);
+
     const isOwnProfile = (this.props.id === parseInt(this.props.router.params.id));
+    const responseText = this.props.response
+
     this.state = {
       editing: false,
       questionText: this.questionText(),
-      responseText: this.props.response,
+      responseText: responseText,
       canEdit: isOwnProfile,
       canSave: false
     };
@@ -60,7 +63,7 @@ class ProfileQuestionsItem extends React.Component {
   render() {
     let submittedText = "";
     if(this.state.responseText && !this.state.editing) {
-      submittedText = this.props.response;
+      if (this.state.responseText !== "null") submittedText = this.state.responseText;
     }
 
     return (
