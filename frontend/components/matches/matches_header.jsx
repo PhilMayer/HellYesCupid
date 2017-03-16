@@ -60,14 +60,15 @@ export default class MatchesHeader extends React.Component {
   }
 
   queryAgesandDistance () {
-    return () => {
-      this.props.fetchMatches({
-        min_age: this.state.minAge,
-        max_age: this.state.maxAge,
-        distance: this.state.distance
-      });
-      // .then(() => setTimeout(() => this.setState({editAge: false}), 1000));
-    };
+    if (this.state.minAge !== "") {
+      return () => {
+        this.props.fetchMatches({
+          min_age: this.state.minAge,
+          max_age: this.state.maxAge,
+          distance: this.state.distance
+        });
+      };
+    }
   }
 
   openAgeSearch (e) {
