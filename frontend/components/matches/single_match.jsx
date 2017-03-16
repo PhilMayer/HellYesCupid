@@ -31,7 +31,7 @@ export default class SingleMatch extends React.Component {
         <div className="matches-user-info">
           <span>{this.props.loverTwo.age}</span>
           <span className="dot">•</span>
-          <span>{this.props.loverTwo.zipcode}</span>
+          <span>New York, NY</span>
         </div>
 
         <p>{matchPercent}%</p>
