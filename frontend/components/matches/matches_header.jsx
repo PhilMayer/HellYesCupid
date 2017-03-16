@@ -29,23 +29,31 @@ export default class MatchesHeader extends React.Component {
     }
   }
 
-  changeAgeRange () {
+  ageSearch () {
     return(
       <div className={this.state.editAge === true ? "change-range" : "hidden"}>
         <div className='square'></div>
         <h3>Ages</h3>
         <input
           value={this.state.minAge}
-          onChange={(e) => this.setState({minAge: e.target.value}, this.queryAgesandDistance())}/>
+          onChange={(e) => this.updateAge(e, "minAge")}/>
         <span className='to'>to</span>
         <input
           value={this.state.maxAge}
-          onChange={(e) => this.setState({maxAge: e.target.value}, this.queryAgesandDistance())}/>
+          onChange={(e) => this.updateAge(e, "maxAge")}/>
       </div>
     );
   }
 
-  changeDistanceRange () {
+  updateAge (e, minMax) {
+    const newAge = e.target.value
+    if (this.interval) clearTimeout(this.interval)
+    this.setState({[minMax]: newAge})
+
+    this.interval = setTimeout(this.queryAgesandDistance(), 250)
+  }
+
+  distanceSearch () {
     return (
       <div className={this.state.editDistance === true ? "change-range" : "hidden"}>
         <div className='square distance-square'></div>
@@ -60,6 +68,7 @@ export default class MatchesHeader extends React.Component {
   }
 
   queryAgesandDistance () {
+    console.log(this.state.minAge)
     if (this.state.minAge !== "") {
       return () => {
         this.props.fetchMatches({
@@ -96,7 +105,7 @@ export default class MatchesHeader extends React.Component {
             between the ages of {this.state.minAge} and {this.state.maxAge + " "}
           </span>
 
-          {this.changeAgeRange()}
+          {this.ageSearch()}
         </span>
 
         <span className="age-box">
@@ -107,7 +116,7 @@ export default class MatchesHeader extends React.Component {
           </span>
           <span>{" " + this.props.currentUser.zipcode}</span>
 
-          {this.changeDistanceRange()}
+          {this.distanceSearch()}
         </span>
 
       </div>
