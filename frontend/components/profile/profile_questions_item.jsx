@@ -31,7 +31,7 @@ class ProfileQuestionsItem extends React.Component {
     const id = this.props.id;
     // const question = this.props.question;
     // const response = this.state.responseText;
-    this.props.updateUser(id, formData).then(this.setState({editing: false}));
+    this.props.updateUser(id, formData).then(() => this.setState({editing: false}));
     // this.props.updateUser(this.props.id, formData).then(this.setState({editing: false}));
   }
 
@@ -82,8 +82,9 @@ class ProfileQuestionsItem extends React.Component {
 
             <textarea
               onChange={(e) => this.setState({responseText: e.target.value, canSave: true})}
-              placeholder="Don't try too hard y'all.">
-              {this.state.responseText}
+              placeholder="Don't try too hard y'all."
+              value={this.state.responseText}>
+
             </textarea>
 
             <div className="buttons">
