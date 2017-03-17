@@ -46,11 +46,10 @@ export default class MatchesHeader extends React.Component {
   }
 
   updateAge (e, minMax) {
-    const newAge = e.target.value
-    if (this.interval) clearTimeout(this.interval)
-    this.setState({[minMax]: newAge})
-
-    this.interval = setTimeout(this.queryAgesandDistance(), 250)
+    let newAge = e.target.value;
+    if (this.interval) clearTimeout(this.interval);
+    this.setState({[minMax]: newAge});
+    this.interval = setTimeout(this.queryAgesandDistance(), 250);
   }
 
   distanceSearch () {
@@ -59,25 +58,22 @@ export default class MatchesHeader extends React.Component {
         <div className='square distance-square'></div>
         Distance (in miles)
         <Rheostat
-          snap={true}
-          values={[this.state.distance]}
           snapPoints={[1, 5, 10, 20, 50, 100]}
+          values={[this.state.distance]}
           onChange={(e) => this.setState({distance: e.values[0]}, this.queryAgesandDistance())}/>
       </div>
     );
   }
 
   queryAgesandDistance () {
-    console.log(this.state.minAge)
-    if (this.state.minAge !== "") {
-      return () => {
-        this.props.fetchMatches({
-          min_age: this.state.minAge,
-          max_age: this.state.maxAge,
-          distance: this.state.distance
-        });
-      };
-    }
+    return () => {
+      if (this.state.minAge < 18) this.state.minAge = 18;
+      this.props.fetchMatches({
+        min_age: this.state.minAge,
+        max_age: this.state.maxAge,
+        distance: this.state.distance
+      });
+    };
   }
 
   openAgeSearch (e) {
