@@ -12,56 +12,56 @@ Message.destroy_all
 users = []
 
   u1 = User.create!(username: "findingDemo", password: "starwars", gender: "Man",
-    sexuality: "Bisexual", age: 29, zipcode: 11215, min_age: 18,
+    sexuality: "Bisexual", age: 20, zipcode: 11215, min_age: 18,
     max_age: 99, image: "http://vignette3.wikia.nocookie.net/pixar/images/2/23/Nemo-finding-nemo-wallpapers-9-0-s-307x512-1.jpg")
 
   users.push(u1)
 
-  u2 = User.create!(username: "snacksOnSnacks", password: "starwars", gender: "Woman",
+  u2 = User.create!(username: "youLiveYouLearn", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 24, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/773/medium/David_Tan.jpg?1483381662")
+    max_age: 99, image: "http://ell.h-cdn.co/assets/15/28/980x490/landscape-1436205117-elle-alanis.jpg")
 
   users.push(u2)
 
-  u3 = User.create!(username: "basic_jim", password: "starwars", gender: "Man",
+  u3 = User.create!(username: "AiWeiWHAT", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 23, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/779/medium/James_Greenberg.jpg?1483381957")
+    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/aiweiwei198lowereastside.jpg")
 
   users.push(u3)
 
-  u4 = User.create!(username: "KyleWillReceiveAttention", password: "starwars", gender: "Woman",
+  u4 = User.create!(username: "hollaback_girl", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 26, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/791/medium/Kyle_Sauri.jpg?1483382242")
+    max_age: 99, image: "http://68.media.tumblr.com/54cc4ac188611990f777299aae4a7767/tumblr_nu4sus55bb1slg0uvo1_500.jpg")
 
   users.push(u4)
 
-  u5 = User.create!(username: "Huh?", password: "starwars", gender: "Man",
+  u5 = User.create!(username: "Basquiattt", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 27, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/744/medium/Meir_Jordan.jpg?1483382573")
+    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/photographs-jean-michael-basquiat-lee-jaffe-10.jpg?w=600&h=399")
 
   users.push(u5)
 
-  u6 = User.create!(username: "DjJapanVersaceMate", password: "starwars", gender: "Woman",
+  u6 = User.create!(username: "BarbaraStreisand", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 27, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/790/medium/Naz.jpg?1483382742")
+    max_age: 99, image: "https://s-media-cache-ak0.pinimg.com/736x/f7/f9/70/f7f970e707effaeee1ac897afcc86f48.jpg")
 
   users.push(u6)
 
-  u7 = User.create!(username: "omgBroBRO", password: "starwars", gender: "Man",
+  u7 = User.create!(username: "Salvadork", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 28, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/755/medium/Gen_%22Danny%22.jpg?1483381838")
+    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/salvador_dalc3ad_1939.jpg?w=467&h=600")
 
   users.push(u7)
 
-  u8 = User.create!(username: "safari_4never", password: "starwars", gender: "Man",
+  u8 = User.create!(username: "raisinBrahms", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 22, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://gravatar.com/avatar/de3ae4d916e03d77388861346e1149d3?secure=false&size=300")
+    max_age: 99, image: "http://kyledjohnson.weebly.com/uploads/1/0/6/6/10665771/9594011_orig.jpg?214")
 
   users.push(u8)
 
-  u9 = User.create!(username: "youMakeMeHappy", password: "starwars", gender: "Man",
+  u9 = User.create!(username: "passion_fruit", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/001/766/medium/Terrance_Xin.jpg?1483382997")
+    max_age: 99, image: "http://www.swurvradio.com/wp-content/uploads/2015/05/young-drake.png")
 
   users.push(u9)
 
