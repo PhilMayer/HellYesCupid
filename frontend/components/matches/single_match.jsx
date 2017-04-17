@@ -19,8 +19,10 @@ export default class SingleMatch extends React.Component {
 
     return(
       <li className="match">
-        <img src={this.props.loverTwo.image}
-          onClick={() => hashHistory.push(`/profile/${this.props.loverTwo.id}`)}/>
+        <div className="profile-holder">
+          <img src={this.props.loverTwo.image}
+            onClick={() => hashHistory.push(`/profile/${this.props.loverTwo.id}`)}/>
+        </div>
 
         <Link
           to={`/profile/${this.props.loverTwo.id}`}

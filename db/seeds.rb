@@ -19,25 +19,25 @@ users = []
 
   u2 = User.create!(username: "youLiveYouLearn", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 24, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://ell.h-cdn.co/assets/15/28/980x490/landscape-1436205117-elle-alanis.jpg")
+    max_age: 99, image: "http://www.alwaysontherun.net/alanismorissettetop10.jpg")
 
   users.push(u2)
 
-  u3 = User.create!(username: "AiWeiWHAT", password: "starwars", gender: "Man",
+  u3 = User.create!(username: "VicePrezz", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 23, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/aiweiwei198lowereastside.jpg")
+    max_age: 99, image: "https://pbs.twimg.com/media/CobK-V4XEAAK6rk.jpg")
 
   users.push(u3)
 
-  u4 = User.create!(username: "hollaback_girl", password: "starwars", gender: "Woman",
+  u4 = User.create!(username: "belly_of_the_beat", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 26, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://68.media.tumblr.com/54cc4ac188611990f777299aae4a7767/tumblr_nu4sus55bb1slg0uvo1_500.jpg")
+    max_age: 99, image: "http://ell.h-cdn.co/assets/16/15/768x923/gallery-1460473025-grimes.jpg")
 
   users.push(u4)
 
-  u5 = User.create!(username: "Basquiattt", password: "starwars", gender: "Man",
+  u5 = User.create!(username: "the_dude", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 27, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/photographs-jean-michael-basquiat-lee-jaffe-10.jpg?w=600&h=399")
+    max_age: 99, image: "https://az694788.vo.msecnd.net/lightbox/Images/NJK/NJK17/try/njk17_8499_try.jpg")
 
   users.push(u5)
 
@@ -59,9 +59,9 @@ users = []
 
   users.push(u8)
 
-  u9 = User.create!(username: "passion_fruit", password: "starwars", gender: "Man",
+  u9 = User.create!(username: "EdgeOfGlory", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://www.swurvradio.com/wp-content/uploads/2015/05/young-drake.png")
+    max_age: 99, image: "http://cdn.smosh.com/sites/default/files/bloguploads/celeb-cry-11.jpg")
 
   users.push(u9)
 
