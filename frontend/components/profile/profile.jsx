@@ -1,7 +1,8 @@
 import React from 'react';
+import {hashHistory} from 'react-router';
+import Loader from 'halogen/PulseLoader';
 import ProfileHeaderContainer from './profile_header_container';
 import ProfileQuestionsContainer from './profile_questions_container';
-import {hashHistory} from 'react-router';
 
 class Profile extends React.Component {
 
@@ -43,6 +44,8 @@ class Profile extends React.Component {
   }
 
   render() {
+    if (this.props.loading) return <Loader color="#26A65B" size="16px" margin="4px"/>;
+    
     return (
       <div className="profile">
         <ProfileHeaderContainer userId={this.props.params.id}/>
