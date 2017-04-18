@@ -1,10 +1,15 @@
 import React from 'react';
 import {hashHistory} from 'react-router';
-import Loader from 'halogen/PulseLoader';
+import Loader from 'halogen/FadeLoader';
 import ProfileHeaderContainer from './profile_header_container';
 import ProfileQuestionsContainer from './profile_questions_container';
 
 class Profile extends React.Component {
+
+  constructor (props) {
+    super(props);
+    this.state = {loading: true}
+  }
 
   componentWillMount () {
     this.props.fetchUser(this.props.params.id);
@@ -12,6 +17,10 @@ class Profile extends React.Component {
 
   componentWillReceiveProps (newProps) {
     this.props.fetchUser(newProps.params.id);
+  }
+
+  componentDidUpdate () {
+    setTimeout(() => this.setState({loading: false}), 1000);
   }
 
   profileNav () {
@@ -44,8 +53,8 @@ class Profile extends React.Component {
   }
 
   render() {
-    if (this.props.loading) return <Loader color="#26A65B" size="16px" margin="4px"/>;
-    
+    if (this.state.loading) return <Loader color="#104da1" size="50px" margin="25% 50%"/>;
+
     return (
       <div className="profile">
         <ProfileHeaderContainer userId={this.props.params.id}/>

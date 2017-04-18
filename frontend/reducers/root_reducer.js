@@ -12,7 +12,6 @@ const rootReducer = combineReducers({
   lover: LoverReducer,
   threads: ThreadReducer,
   matches: MatchesReducer,
-  loading: LoadingReducer,
   session: SessionReducer,
   questions: QuestionReducer
 });
