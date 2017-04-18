@@ -84,7 +84,7 @@ There's no electricity where I live, and I can't read",
   users.push(u3)
 
   u6 = User.create!(username: "SpaceXXX", password: "starwars", gender: "Woman",
-  sexuality: "Bisexual", age: 27, zipcode: 11215, min_age: 18,
+  sexuality: "Bisexual", age: 50, zipcode: 11215, min_age: 18,
   max_age: 99, image: "https://blog.kissmetrics.com/wp-content/uploads/2013/02/elon-musk.jpg")
 
   users.push(u6)
