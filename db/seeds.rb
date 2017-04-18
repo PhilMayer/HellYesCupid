@@ -13,21 +13,81 @@ users = []
 
   u1 = User.create!(username: "findingDemo", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 20, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://vignette3.wikia.nocookie.net/pixar/images/2/23/Nemo-finding-nemo-wallpapers-9-0-s-307x512-1.jpg")
+    max_age: 99,
+    summary: "California --> East Australian Current --> Australia. I'm a clownfish, but that doesn't actually mean I'm very funny.",
+    doing_with_life: "Looking for my parents :(:(",
+    really_good_at: "Making unlikely friends in seemingly hostile environments.",
+    favorite_things: "Books: Game of Thrones!
+Movies: Does Game of Thrones count as a movie cuz it's so long?
+Shows: GOT
+Music: Mostly renaissance polyphony.
+Food: Plankton I guess?",
+    six_things: "1. Salt
+2. Water
+3. Adventures!
+4. Family
+5. Coral
+6. Disney/pixar",
+    think_about: "Honestly not PC enough for this demo.",
+    typical_friday: "Raging",
+    message_me_if: "You've seen my parents :(:(:(.",
+    image: "http://vignette3.wikia.nocookie.net/pixar/images/2/23/Nemo-finding-nemo-wallpapers-9-0-s-307x512-1.jpg")
 
   users.push(u1)
 
-  u2 = User.create!(username: "youLiveYouLearn", password: "starwars", gender: "Woman",
-    sexuality: "Bisexual", age: 24, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "http://www.alwaysontherun.net/alanismorissettetop10.jpg")
+  u9 = User.create!(username: "EdgeOfGlory", password: "starwars", gender: "Man",
+  sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
+  max_age: 99,
+  summary: "I really like country music and Taylor Swift and Game of Thrones and chocolate chip cookie dough.",
+  doing_with_life: "App Academy :) Best Place to meet men in NYC!",
+  really_good_at: "being mansplained to",
+  favorite_things: "The sound and the fury
+love actually
+Game of Thrones!
+Kenny <3",
+  six_things: "cookie dough
+GoT
+kenny
+coding
+friends
+animals",
+  think_about: "why i am on this site",
+  typical_friday: "doing something with all six things above",
+  message_me_if: "you want to mansplain something yet again",
+  image: "http://cdn.smosh.com/sites/default/files/bloguploads/celeb-cry-11.jpg")
 
-  users.push(u2)
+  users.push(u9)
 
   u3 = User.create!(username: "VicePrezz", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 23, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "https://pbs.twimg.com/media/CobK-V4XEAAK6rk.jpg")
+    max_age: 99,
+    summary: "I'm just a bill.
+Yes, I'm only a bill.
+And I'm sitting here on Capitol Hill.
+Well, it's a long, long journey
+To the capital city.
+It's a long, long wait
+While I'm sitting in committee,
+But I know I'll be a law someday
+At least I hope and pray that I will,
+But today I am still just a bill.",
+    doing_with_life: "Slayin dragons and farming mushrooms",
+    really_good_at: "Making my teeth fall out",
+    favorite_things: "I only eat pieces of grass and small rocks
+There's no electricity where I live, and I can't read",
+    six_things: "Katy Perry and the first 5 harry potter movies",
+    think_about: "how easy it would be to steal the declaration of independence",
+    typical_friday: "( ͡° ͜ʖ ͡°)",
+    message_me_if: "You have no terminal illnesses and are willing to give up your worldly possessions to live on my oyster farm",
+    image: "https://pbs.twimg.com/media/CobK-V4XEAAK6rk.jpg")
 
   users.push(u3)
+
+  u6 = User.create!(username: "SpaceXXX", password: "starwars", gender: "Woman",
+  sexuality: "Bisexual", age: 27, zipcode: 11215, min_age: 18,
+  max_age: 99, image: "https://blog.kissmetrics.com/wp-content/uploads/2013/02/elon-musk.jpg")
+
+  users.push(u6)
 
   u4 = User.create!(username: "belly_of_the_beat", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 26, zipcode: 10001, min_age: 18,
@@ -37,33 +97,47 @@ users = []
 
   u5 = User.create!(username: "the_dude", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 27, zipcode: 10001, min_age: 18,
-    max_age: 99, image: "https://az694788.vo.msecnd.net/lightbox/Images/NJK/NJK17/try/njk17_8499_try.jpg")
+    max_age: 99, image: "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTexRd9CmEP5zhSEUQ-UuBTjmM4mxK1mTHup076jUUsw2mcbv1awA")
 
   users.push(u5)
 
-  u6 = User.create!(username: "BarbaraStreisand", password: "starwars", gender: "Woman",
-    sexuality: "Bisexual", age: 27, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "https://s-media-cache-ak0.pinimg.com/736x/f7/f9/70/f7f970e707effaeee1ac897afcc86f48.jpg")
 
-  users.push(u6)
-
-  u7 = User.create!(username: "Salvadork", password: "starwars", gender: "Man",
+  u7 = User.create!(username: "OhhCaanadaaaa", password: "starwars", gender: "Man",
     sexuality: "Bisexual", age: 28, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "https://flavorwire.files.wordpress.com/2011/10/salvador_dalc3ad_1939.jpg?w=467&h=600")
+    max_age: 99, image: "https://s3.scoopwhoop.com/anj/trudeau/81226a11-0855-4c58-af23-ab11424f6662.jpg")
 
   users.push(u7)
 
+  u2 = User.create!(username: "youLiveYouLearn", password: "starwars", gender: "Woman",
+  sexuality: "Bisexual", age: 24, zipcode: 10001, min_age: 18,
+  max_age: 99,
+  image: "http://www.alwaysontherun.net/alanismorissettetop10.jpg")
+
+  users.push(u2)
+
   u8 = User.create!(username: "raisinBrahms", password: "starwars", gender: "Woman",
     sexuality: "Bisexual", age: 22, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://kyledjohnson.weebly.com/uploads/1/0/6/6/10665771/9594011_orig.jpg?214")
+    max_age: 99,
+    summary: "Hello. I am Brahms. For me, life is all about struggle, and finding the right person to struggle with you. Won't you come struggle with me?",
+    doing_with_life: "Looking for my parents :(:(",
+    really_good_at: "I like to think I'm rather a good writer of songs and musics.",
+    favorite_things: "I like food. Here are the foods I like:
+
+-pizza
+-ice cream",
+    six_things: "-Quarter notes
+-Eighth notes
+-Sixteenth notes
+-Half Notes
+-Whole Notes
+-Tequila",
+    think_about: "Why are we all here? What makes a meaningful life? ",
+    typical_friday: "The difference between Friday and Thursday is all just in your head. The weekdays and be lived just the same as the weekends, if you just try hard enough.",
+    message_me_if: "The word 'Beethoven' means something to you",
+    image: "http://kyledjohnson.weebly.com/uploads/1/0/6/6/10665771/9594011_orig.jpg?214")
 
   users.push(u8)
 
-  u9 = User.create!(username: "EdgeOfGlory", password: "starwars", gender: "Man",
-    sexuality: "Bisexual", age: 85, zipcode: 11215, min_age: 18,
-    max_age: 99, image: "http://cdn.smosh.com/sites/default/files/bloguploads/celeb-cry-11.jpg")
-
-  users.push(u9)
 
 
     thread = Conversation.create!(lover_one_id: u1.id, lover_two_id: u9.id)

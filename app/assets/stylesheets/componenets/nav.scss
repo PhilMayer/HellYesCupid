@@ -5,7 +5,7 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
-  &.boobies {
+  &.flex {
     justify-content: flex-end;
   }
 }
@@ -55,6 +55,8 @@
 .nav button {
   margin-right: 50px;
   margin-top: 4px;
+  // border: 1px solid #4879c1;
+  // padding: 10px 15px;
 }
 
 .nav div {

@@ -8,10 +8,9 @@ const Nav = (props) => {
         <img onClick={() => hashHistory.push(`/profile/${props.currentUser.id}`)} src={window.images.small} className="small-logo"/>
         <h2 onClick={() => hashHistory.push("/matches")}>Browse Matches</h2>
         <h2 onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/threads`)}>Messages</h2>
+        <h2 onClick={() => hashHistory.push(`/profile/${props.currentUser.id}/questions`)}>Questions</h2>
 
         <div id="chat-and-thumb">
-
-
           <img
             className="nav-thumb"
             src={props.currentUser.image_url}
@@ -23,12 +22,12 @@ const Nav = (props) => {
     );
   } else if (props.location.pathname === "/signup" || props.location.pathname === "/"){
     return (
-      <div className="nav boobies">
+      <div className="nav flex">
         <span>Have an account?</span>
         <div>
           <Link to='/login'>Sign in</Link>
 
-          <button onClick={() => props.login({
+          <button className="demo-login" onClick={() => props.login({
               username: "findingDemo",
               password: "starwars"
             }).then((user) => hashHistory.push(`/matches`))}>
@@ -39,7 +38,7 @@ const Nav = (props) => {
     );
   } else {
     return (
-      <div className="nav boobies">
+      <div className="nav flex">
           <Link to='/signup'>Sign Up</Link>
       </div>
     );

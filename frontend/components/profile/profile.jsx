@@ -22,6 +22,10 @@ class Profile extends React.Component {
   componentDidUpdate () {
     setTimeout(() => this.setState({loading: false}), 1000);
   }
+  
+  componentDidMount () {
+    setTimeout(() => this.setState({loading: false}), 1000);
+  }
 
   profileNav () {
     const id = this.props.params.id;

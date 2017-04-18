@@ -18,7 +18,7 @@ class SingleQuestion extends React.Component {
       acceptableAnswers = responses[mostRecentResponse].acceptable_answers;
     }
 
-    this.state={
+    this.state = {
       editing: false,
       weight: weight,
       updatedResponse: existingAnswer,
@@ -55,7 +55,7 @@ class SingleQuestion extends React.Component {
   handleCheckboxChange (e) {
     let newAcceptableAnswers = this.state.acceptableAnswers;
     const answer = e.target.value;
-  
+
     if (!e.target.checked) {
       const idx = newAcceptableAnswers.indexOf(answer);
       delete newAcceptableAnswers[idx];

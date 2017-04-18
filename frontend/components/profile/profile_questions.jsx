@@ -2,6 +2,11 @@ import React from 'react';
 import ProfileQuestionsItem from './profile_questions_item';
 
 class ProfileQuestions extends React.Component {
+
+  // shouldComponentUpdate (nextProps) {
+  //   if (nextProps === this.props) return false;
+  // }
+
   render () {
     let questionTitles = Object.keys(this.props.questions);
     const questionsAndResponses = questionTitles.map((question, idx) => (
