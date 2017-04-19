@@ -5,14 +5,14 @@
 ![signup](app/assets/images/hell_yes_landing.png)
 
 ## Abstract
-OkCupid always seemed to produce the best dates, its wealth of information on matches and matching algorithm being indispensable to the bachelor needing to distinguish between what might be a good date, and what might turn out to be so bad it wouldn’t even be worth the story.
+OkCupid always seemed to produce the best dates. Its wealth of information and matching algorithm are indispensable to the bachelor or bachelorette wanting to distinguish between a good date and one so bad you might need to leave before even asking their favorite karaoke song.
 
 It was in this spirit that I set out to clone one of my very favorite apps. The final product is HellYesCupid, a dating web app that allows lovers to view and filter matches, answer match questions, and message potential future spouses or spurned ex-es.
 
 ## Architecture
 
 ### Backend
-The backend of HellYesCupid was handcrafted using Ruby on Rails, with heavy assistance from Jbuilder. The database was made possible by PostgreSQL.
+HellYesCupid relies on Ruby on Rails and PostgreSQL to deal with authentication and data retrieval and updating.
 
 ### Frontend
 The frontend of HellYesCupid is but a single page, constructed using the React.js library and Redux framework.
